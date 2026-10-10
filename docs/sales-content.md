@@ -6,10 +6,12 @@ Priority confirmed by the owner: consultations and strategy sessions. Prices con
 
 Home introduces the work and three starting points. Services explains the business problems Staci helps with and how the work happens, without repeating the package comparison. Book a Session compares all six consultations by need, scope, duration and price. A session detail explains its deliverables and leads to its original provider booking URL. Offers are the single source for the summaries and pricing in the Home and booking lists.
 
-Speaking is a separate event enquiry path. About now describes Staci using the original biography, replacing the unrelated gym template. Contact keeps the original provider form. Connect is a short directory. Resources keeps the original `/shop` URL and groups planners, AI support, videos, reading and affiliate recommendations. Ready to Scale is a distinct programme with its existing calendars, one introduction video and an enquiry route for scope and price. AI support retains its original specialist calendar without placeholder headings.
+Speaking is a separate event enquiry path. About now describes Staci using the original biography, replacing the unrelated gym template. Contact keeps the original provider form. Connect is a short directory. Resources keeps the original `/resources` URL and groups planners, AI support, videos, reading and affiliate recommendations. Ready to Scale is a distinct programme with its existing calendars, one introduction video and an enquiry route for scope and price. AI support retains its original specialist calendar without placeholder headings.
 
 Removed from sales-page presentation: repeated signup forms, duplicate programme blocks, multiple generic contact buttons, unrelated promotions and yearless campaign offers. Original extraction is retained under docs/source and the previous presentation is available in Git history. Existing routes, redirects, provider forms, blog posts, calendars and media library remain available.
 
 ## Review and measurement
 
 The new hierarchy is designed to make choosing a session easier; increased sales has not been measured. Useful future measures are visits to Book a Session, session-detail visits and completed provider bookings. The booking provider controls checkout, payment products, availability and completion reporting. Review provider prices when changing an offer in Studio.
+
+All pages now use named Marpos Studio section tabs. Section titles, images and actions are structured fields; text lives in a matching Markdown slot. Session summaries and prices remain shared offer data. PageSections is the single layout renderer, replacing the previous nested story, grid, panel and button components.

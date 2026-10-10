@@ -18,12 +18,12 @@ skipLink: Skip to content
 readMore: Read more
 backLabel: Back to the blog
 footerLinks:
-  - label: Consultations
-    to: /book-online
+  - label: Book a session
+    to: /book-a-session
   - label: Contact
     to: /contact
   - label: Resources
-    to: /shop
+    to: /resources
   - label: Videos
     to: /videos
   - label: Blog
@@ -31,7 +31,7 @@ footerLinks:
   - label: Newsletter
     to: /newsletter
   - label: Affiliate Disclaimer
-    to: /affiliate
+    to: /affiliate-disclaimer
   - label: Donate to F.L.O.U.R.I.S.H.
     to: https://www.facebook.com/flourishwomensinititative
 socialLinks:

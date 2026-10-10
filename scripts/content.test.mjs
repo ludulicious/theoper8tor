@@ -13,21 +13,24 @@ test("all pages have unique public addresses and required copy", () => {
   assert.equal(known.size, pages.length);
   assert.equal(pages.filter((page) => page.collection === "blog").length, 4);
   assert.ok(known.has("/newsletter"));
-  assert.ok(known.has("/intentionalcoffeechat"));
+  assert.ok(known.has("/book-a-session/intentional-coffee"));
   for (const page of pages) {
     assert.ok(page.data.title?.trim(), page.file);
     assert.ok(page.data.description?.trim(), page.file);
-    assert.ok(page.body.includes("# "), page.file);
+    assert.ok(
+      page.data.studio?.blocks.some((block) => page.data[block.field]?.title),
+      page.file,
+    );
   }
 });
 test("ordering numbers do not change page addresses; new pages inherit collection prefixes", () => {
   assert.equal(
     pagePath("02.services/09.new-service.md", pageSources.offers),
-    "/book-online/new-service",
+    "/book-a-session/new-service",
   );
   assert.equal(
     pagePath("06.blog/09.new-article.md", pageSources.blog),
-    "/blog/b/new-article",
+    "/blog/new-article",
   );
   assert.equal(
     pagePath("02.services/00.index.md", pageSources.services),
@@ -101,16 +104,17 @@ test("video library references, thumbnails and Studio previews resolve", () => {
   }
 });
 
-test("offer URLs are nested under booking and old URLs redirect directly", () => {
+test("service URLs are nested under book-a-session and old URLs redirect directly", () => {
   const offers = pages.filter((page) => page.collection === "offers");
   assert.ok(offers.length >= 7);
   for (const offer of offers) {
-    assert.ok(offer.path.startsWith("/book-online/"), offer.path);
-    const oldPath = offer.path.replace("/book-online", "");
-    assert.equal(redirects[oldPath], offer.path);
-    for (const page of pages) {
-      assert.ok(!page.body.includes(`to="${oldPath}"`), page.file);
-      assert.ok(!page.body.includes(`](${oldPath})`), page.file);
+    assert.ok(offer.path.startsWith("/book-a-session/"), offer.path);
+    assert.equal(redirects[offer.path.replace("/book-a-session/", "/services/")], offer.path);
+    for (const [oldPath, destination] of Object.entries(redirects)) {
+      if (destination !== offer.path) continue;
+      for (const page of pages) {
+        assert.ok(!page.body.includes(`](${oldPath})`), page.file);
+      }
     }
   }
 });
@@ -140,13 +144,104 @@ test("consultations have complete scopes and valid provider booking destinations
     );
   }
   assert.ok(offers.some((offer) => offer.data.featured));
-  for (const path of ["/", "/book-online"]) {
+  for (const path of ["/", "/book-a-session"]) {
     const page = pages.find((page) => page.path === path);
-    assert.ok(page.body.includes("offer-list"), path);
+    assert.ok(
+      page.data.studio.blocks.some((block) => page.data[block.field]?.sessions),
+      path,
+    );
     assert.doesNotMatch(
       page.body,
       /provider-embed/,
       `${path}: keep booking selection focused`,
     );
+  }
+});
+
+// These checks cover the editing contract: every section tab must own its copy and fields.
+test("Studio sections have unique slots, editable fields and valid media and actions", () => {
+  for (const page of pages) {
+    const blocks = page.data.studio?.blocks;
+    assert.ok(blocks?.length, page.file);
+    assert.equal(
+      new Set(blocks.map((b) => b.id)).size,
+      blocks.length,
+      page.file,
+    );
+    assert.equal(
+      (page.body.match(/^::page-sections$/gm) || []).length,
+      1,
+      page.file,
+    );
+    assert.doesNotMatch(page.body, /^:{2,}(?!page-sections)[a-z]/m, page.file);
+    for (const block of blocks) {
+      assert.ok(page.data[block.field], `${page.file}: ${block.field}`);
+      assert.equal(block.component, "page-sections");
+      assert.equal(
+        (page.body.match(new RegExp(`^#${block.slot}$`, "gm")) || []).length,
+        1,
+        page.file,
+      );
+      const section = page.data[block.field];
+      for (const image of [section.image, ...(section.images || [])].filter(
+        Boolean,
+      )) {
+        assert.ok(
+          existsSync(`${root}/public${image.src}`),
+          `${page.file}: ${image.src}`,
+        );
+        assert.equal(typeof image.alt, "string");
+      }
+      for (const link of [
+        ...(section.actions || []),
+        ...(section.links || []),
+        section.image,
+        ...(section.images || []),
+      ].filter((item) => item?.to)) {
+        if (link.to.startsWith("/"))
+          assert.ok(
+            known.has(link.to.split(/[?#]/)[0]) || redirects[link.to],
+            `${page.file}: ${link.to}`,
+          );
+      }
+      if (section.form) {
+        assert.equal(new URL(section.form.src).protocol, "https:");
+        assert.ok(section.form.title);
+      }
+      if (section.video)
+        assert.ok(existsSync(`${root}/content/09.videos/${section.video}.yml`));
+    }
+  }
+});
+
+test("menu routes match their labels and content links use canonical routes", () => {
+  const menu = parse(
+    readFileSync(`${root}/content/08.settings/menu.yml`, "utf8"),
+  );
+  const expected = {
+    "How I can help": "/services",
+    "Meet Staci": "/meet-staci",
+    Speaking: "/speaking",
+    Contact: "/contact",
+    "Book a session": "/book-a-session",
+  };
+  for (const item of [...menu.items, menu.action])
+    assert.equal(item.to, expected[item.label]);
+  for (const page of pages) {
+    const check = (value) => {
+      if (!value || typeof value !== "object") return;
+      if (typeof value.to === "string" && value.to.startsWith("/"))
+        assert.ok(
+          !redirects[value.to.split(/[?#]/)[0]],
+          `${page.file}: obsolete ${value.to}`,
+        );
+      for (const child of Object.values(value)) check(child);
+    };
+    check(page.data);
+    for (const match of page.body.matchAll(/\]\(<?(\/[^)>\s]+)/g))
+      assert.ok(
+        !redirects[match[1].split(/[?#]/)[0]],
+        `${page.file}: obsolete ${match[1]}`,
+      );
   }
 });

@@ -9,3 +9,7 @@ Genre: modern minimal, with the established condensed display type. Home and bio
 Consultation facts live once in Offers frontmatter. The shared list uses kind=consultation, order and featured. Prices are USD. Confirmed: $97 initial, $497 Fast Action / Client Relations / Brilliance, $997 Systems Audit, $1,497 Funnel Mapping. VIP Day is enquiry only. Preserve existing providers and public routes.
 
 Responsive: stack diptychs and session rows below 768px, retain readable button labels and visible focus. No decorative motion. Check 320, 375, 414 and 768px and desktop before handoff.
+
+## Section editing
+
+Owner requested the Amstel Gospel Choir editing pattern: all pages expose named Studio tabs with structured titles, images and actions plus a short Markdown slot for each section. PageSections is the shared renderer; primary hero and photo layouts retain the established typography, imagery and responsive treatment. Text sections stack in reading order, removing nested grid/panel components from the editor.

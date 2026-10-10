@@ -12,8 +12,8 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 
 | Collection  | Location                                          | Purpose                                                                |
 | ----------- | ------------------------------------------------- | ---------------------------------------------------------------------- |
-| Home        | `content/00.index.md`                             | Homepage story and calls to action                                     |
-| Speaker     | `content/01.speaker.md`                           | Speaking, interviewing and training                                    |
+| Home        | `content/00.index.md`                             | Homepage sections and calls to action                                     |
+| Speaker     | `content/01.speaking.md`                           | Speaking, interviewing and training                                    |
 | Services    | `content/02.services/00.index.md`                 | Services overview                                                      |
 | Offers      | `content/02.services/*.md` excluding the overview | Consultations and programmes                                           |
 | Booking     | `content/03.booking/`                             | Booking list and calendar pages                                        |
@@ -25,36 +25,33 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 | Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility             |
 | Menu / Site | `content/08.settings/`                            | Navigation, logo, contact details and footer                           |
 
-Each page has Title, Description and optional SEO Title. Optional Breadcrumbs let you set an ordered trail of labels and links; leave the final item without a link. If omitted, the page uses Home and its title; offers include Book Now between them. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap. Header Logo and Footer Logo select separate transparent PNG wordmarks suited to the dark header and footer, with gold lettering and ivory accents. The original Logo stays available for social sharing and as a fallback.
+Each page has Title, Description and optional SEO Title. Optional Breadcrumbs let you set an ordered trail of labels and links; leave the final item without a link. If omitted, the page uses Home and its title; offers include Book a session between them. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap. Header Logo and Footer Logo select separate transparent PNG wordmarks suited to the dark header and footer, with gold lettering and ivory accents. The original Logo stays available for social sharing and as a fallback.
 
-## Stories and reusable sections
+## Named page sections
 
-Use the visual story editor for paragraphs, headings, lists, links and photographs. Source mode exposes the Markdown components:
+Pages follow the Amstel Gospel Choir homepage editing pattern: choose a named section tab, such as **Introduction**, **Where are you right now?**, or **What is included**. Each tab contains its own Title, Eyebrow, Image (with the media picker and alternative text), Actions, Links and Visible switch where applicable. Edit the paragraphs and lists in the visual text editor directly below those fields. There is no need to find or edit nested components.
 
-- `::site-section` groups a section. Its children are normal Markdown.
-- `::content-grid{columns="2"}` groups two or three columns. Each `::content-panel` holds ordinary story content.
-- `::action-link{label="Book now" to="/book-online"}` provides a button link.
-- `::provider-embed{src="https://link.funnelstreams.com/widget/form/..." title="Contact"}` embeds an existing provider form or calendar directly on the page. Use `::video-player{video="security-cameras"}` for a library video.
+The **Details** tab contains the page title, search description, breadcrumbs and any collection-specific settings. Section settings are kept out of Details. Session pages keep Price, Duration, Summary, Best For, Booking URL, Featured and Order in Details, so listing cards and the booking summary continue to share one source.
 
-Nested components use progressively longer colon fences; preserve the matching opening and closing fences when editing source mode. Keep one level-one heading per page. Use smaller headings for sections, and paragraphs for descriptions and prices.
+Forms have an editable source URL and title in their section. Session comparison sections have a Featured Only switch. Video sections reference the Videos library. These render automatically; the text editor contains ordinary Markdown only.
 
-Forms and calendars remain hosted by the original providers. Change their URLs in the relevant story when changing providers; the ProviderEmbed allowlist must also be updated by a developer for a different host. Forms and calendars load directly in iframes, with a new-tab fallback link below each embed. Provider form labels, consent text, notifications and payment products are maintained in that provider, not in Studio.
+All pages use one `::page-sections` container, with one named Markdown slot per section. The hidden `studio.blocks` configuration maps each tab to its slot and section fields. Preserve that mapping in source mode. The reusable `PageSections.vue` renderer handles the layout; text, images and actions live in the content file. New section field names must also be added to the collection in `shared/section-fields.mjs` by a developer.
 
 ## New content and ordering
 
-Choose Add content in Offers, Booking, Information or Blog. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
+For a new page with named sections, start from a similar existing content file so its section fields, Studio tabs and text slots stay connected. A developer can add or rename section types in `shared/section-fields.mjs`. Choose Add content in Offers, Booking, Information or Blog for the new document. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
 
-- `content/02.services/08.new-consultation.md` → `/book-online/new-consultation`
+- `content/02.services/08.new-consultation.md` → `/book-a-session/new-consultation`
 - `content/05.information/08.new-page.md` → `/new-page`
-- `content/06.blog/05.new-story.md` → `/blog/b/new-story`
+- `content/06.blog/05.new-story.md` → `/blog/new-story`
 
 Do not reuse a filename slug already present in another collection. Renaming a slug changes its URL; add a redirect in `shared/legacy-redirects.json`. Reordering only the number does not change the URL. Add new navigation links to Menu if they should appear in the header. Blog posts appear automatically. The next start/build updates the sitemap and `studio.preview.json`, including media usage destinations.
 
 ## Photos
 
-The library supports category and visibility filters, uploads to `public/images/`, editable alternative text and optional thumbnails. Images retain their natural proportions; library thumbnails use 4:3. Supported uploads are JPG, JPEG, PNG, WebP and GIF up to 10 MiB. The original SVG social icons remain project assets and do not need editing for ordinary page maintenance.
+The library supports category and visibility filters, uploads to `public/images/`, editable alternative text and optional thumbnails. Images retain their natural proportions; library thumbnails use 4:3. Supported uploads are JPG, JPEG, PNG, WebP and GIF up to 10 MiB. The library uses editable JPEG/PNG images; original SVG artwork is archived under `docs/vector-originals/`.
 
-`visible` controls library metadata; pages display their selected image directly. To remove a photograph from a page, remove or replace the page's image. Updating a library item's source does not rewrite existing inline Markdown image paths: select the new image on each page that uses it.
+`visible` controls library metadata; pages display their selected image directly. To remove a photograph from a page, remove or replace the page's image. Updating a library item's source does not rewrite selected image paths in page sections: select the new image in each section that uses it.
 
 ## Videos
 
@@ -62,7 +59,7 @@ The Videos collection follows the Amstel Gospel Choir media library: add a title
 
 All visible videos appear automatically at `/videos`; category filters are built from their categories. The page introduction is editable in Information → Videos. Each thumbnail opens an embedded YouTube player on the website, with fullscreen support; YouTube loads only after Play is clicked. Selecting another gallery video stops the previous one.
 
-To insert a library video into another page, use `::video-player{video="security-cameras"}` in source mode, with the filename without `.yml` as the video value. Keep the matching closing `::` fence. Updating a library entry updates all its players. Rename its filename only if you also update page references. `::video-gallery` inserts the complete library.
+To select a library video in a page section, set its **Video** field to the filename without `.yml`, for example `security-cameras`. **Video Library** displays the complete gallery. Updating a library entry updates all its players. Rename its filename only if you also update the section references.
 
 The original Uncle Nearest video is unavailable on YouTube. Its entry and ID are retained with Visible off, and the site logo is its fallback thumbnail. Replace the ID and thumbnail, then switch Visible on to restore it to the gallery and homepage.
 
@@ -72,7 +69,7 @@ The original Uncle Nearest video is unavailable on YouTube. Its entry and ID are
 
 Before launch, read `docs/migration.md` for the original site's conflicting prices, historical events, unrelated About template and missing external destinations. Publishing in Studio edits GitHub content; configure hosting to rebuild and publish the generated result afterward.
 
-Offer pages use `/book-online/[offer]`, including `/book-online/initial-consultation` and `/book-online/fastaction`. The previous root URLs redirect permanently to their new addresses. Studio previews and the sitemap use the nested URLs.
+Offer pages use `/book-a-session/[slug]`, including `/book-a-session/initial-consultation` and `/book-a-session/fast-action`. The previous root URLs redirect permanently to their new addresses. Studio previews and the sitemap use the nested URLs.
 
 ## Consultation summaries and the sales journey
 
@@ -87,16 +84,23 @@ Home and Book a Session use the same offer data. Services explains the areas of 
 - **Featured:** shows the session among the homepage starting points.
 - **Order:** smaller numbers appear first.
 
-The consultation detail layout supplies the title, summary, duration, price and booking button. Its story body should start with level-two headings, and explain scope and deliverables without repeating prices or adding another booking button. Programme pages retain their ordinary story layout. `sales` selects the shared sales styling and is hidden from ordinary editing.
+The consultation detail layout supplies the title, summary, duration, price and booking button. Its named sections explain scope and deliverables without repeating prices or adding another booking button. Programme pages use the same section editor. `sales` selects the shared sales styling and is hidden from ordinary editing.
 
-`::offer-list` inserts all consultations as pricing cards with the session name, price, duration, summary and a link to the full scope and booking action. `::offer-list{featured="true"}` inserts only featured consultations. `::story-hero{image="/images/86cafeac5a88.jpg" alt="Staci Moore" eyebrow="Meet The Oper8tor"}` places editable Markdown beside a photograph. As with other components, preserve the closing colon fence.
-
-The main menu sends visitors to How I can help (Services), Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources retains `/shop` so existing links work. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.
-
-Use `::photo-story{image="/images/9c2d4e9ea8d5.jpg" alt="Staci Moore in yellow"}` for a photograph beside a story section. The photograph sits on the left on larger screens and above the story on phones. Its paragraphs, headings and links are ordinary editable Markdown. Change the image path and alternative text in the component attributes to choose another photograph from the library.
+The main menu sends visitors to How I can help (Services), Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources uses `/resources`; old `/shop` links redirect to it. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.
 
 ### Editable image formats
 
 All images in `public/images/` use JPEG or PNG so they can be edited in Marpos Studio. Opaque photographs use high-quality JPEG; transparent images and logos use PNG. Photo dimensions are preserved, and vector artwork was exported at four times its original dimensions for sharp display. Original vector sources are retained in `docs/vector-originals/`; the favicon remains an SVG.
 
-Website images render through `NuxtImg` with responsive source sets and 1×/2× variants. Heroes, photo stories, content grids, article images, blog cards, video thumbnails and logos use sizes for their respective layouts. Markdown images automatically use the shared `ProseImg` renderer; no content syntax changes are needed. An optional `sizes` attribute overrides the default for an individual Markdown image. Hero images load eagerly; images further down the page load lazily. Static generation includes the resized image files.
+Website images render through `NuxtImg` with responsive source sets and 1×/2× variants. Hero sections, photo sections, article images, blog cards, video thumbnails and logos use sizes for their respective layouts. Markdown images automatically use the shared `ProseImg` renderer; no content syntax changes are needed. An optional `sizes` attribute overrides the default for an individual Markdown image. Hero images load eagerly; images further down the page load lazily. Static generation includes the resized image files.
+
+## Route structure
+
+- How I can help: `/services`; individual offers: `/book-a-session/[slug]`.
+- Meet Staci: `/meet-staci`; Speaking: `/speaking`; Contact: `/contact`.
+- Book a session: `/book-a-session`; coffee calendars and programme calendars sit beneath it.
+- Resources: `/resources`; planner and AI support pages sit beneath it.
+- Blog: `/blog`; articles use `/blog/[slug]`.
+- Affiliate Disclaimer: `/affiliate-disclaimer`.
+
+All former public addresses redirect directly to their current destination with status 301. Internal links, breadcrumbs, previews and the sitemap use the current routes. Section field names are stable and do not depend on public route slugs.

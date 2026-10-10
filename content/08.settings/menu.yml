@@ -3,13 +3,13 @@ items:
   - label: How I can help
     to: /services
   - label: Meet Staci
-    to: /about
+    to: /meet-staci
   - label: Speaking
-    to: /speaker
+    to: /speaking
   - label: Contact
     to: /contact
 action:
   label: Book a session
-  to: /book-online
+  to: /book-a-session
 openLabel: Menu
 closeLabel: Close

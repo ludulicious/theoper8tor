@@ -1,11 +1,61 @@
 import { defineCollection, defineContentConfig, z } from "@nuxt/content";
 import { pageSources } from "./shared/content-sources.mjs";
+import { sectionFields } from "./shared/section-fields.mjs";
 const image = z.object({
   src: z.string().editor({ input: "media" }),
   alt: z.string(),
 });
 const link = z.object({ label: z.string(), to: z.string() });
+const section = z.object({
+  title: z.string().optional(),
+  eyebrow: z.string().optional(),
+  image: image.extend({ to: z.string().optional() }).optional(),
+  images: z.array(image.extend({ to: z.string().optional() })).optional(),
+  actions: z.array(link).optional(),
+  links: z.array(link).optional(),
+  visible: z.boolean().default(true),
+  position: z.string().optional(),
+  mobilePosition: z.string().optional(),
+  layout: z
+    .enum(["standard", "hero", "photo"])
+    .default("standard")
+    .editor({ hidden: true }),
+  level: z.number().optional().editor({ hidden: true }),
+  sessions: z.object({ featuredOnly: z.boolean().default(false) }).optional(),
+  form: z
+    .object({
+      src: z.string().url(),
+      title: z.string(),
+      kind: z.string().optional().editor({ hidden: true }),
+    })
+    .optional(),
+  video: z.string().optional(),
+  videoLibrary: z.boolean().optional(),
+});
+const sectionsFor = (collection: keyof typeof sectionFields) =>
+  Object.fromEntries(
+    sectionFields[collection].map((name: string) => [
+      name,
+      section.optional().editor({ hidden: true }),
+    ]),
+  );
+const studio = z
+  .object({
+    blocks: z.array(
+      z.object({
+        id: z.string(),
+        label: z.string(),
+        type: z.literal("markdown"),
+        component: z.literal("page-sections"),
+        slot: z.string(),
+        field: z.string(),
+      }),
+    ),
+  })
+  .optional()
+  .editor({ hidden: true });
 const page = z.object({
+  studio,
   title: z.string().min(1),
   description: z.string(),
   seoTitle: z.string().optional(),
@@ -25,22 +75,23 @@ export default defineContentConfig({
     home: defineCollection({
       type: "page",
       source: pageSources.home,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("home"), layout: story }),
     }),
     speaker: defineCollection({
       type: "page",
       source: pageSources.speaker,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("speaker"), layout: story }),
     }),
     services: defineCollection({
       type: "page",
       source: pageSources.services,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("services"), layout: story }),
     }),
     offers: defineCollection({
       type: "page",
       source: pageSources.offers,
       schema: page.extend({
+        ...sectionsFor("offers"),
         layout: story,
         kind: z.enum(["consultation", "programme"]).default("programme"),
         price: z.number().positive().optional(),
@@ -55,22 +106,23 @@ export default defineContentConfig({
     booking: defineCollection({
       type: "page",
       source: pageSources.booking,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("booking"), layout: story }),
     }),
     contact: defineCollection({
       type: "page",
       source: pageSources.contact,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("contact"), layout: story }),
     }),
     information: defineCollection({
       type: "page",
       source: pageSources.information,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({ ...sectionsFor("information"), layout: story }),
     }),
     blogIndex: defineCollection({
       type: "page",
       source: pageSources.blogIndex,
       schema: page.extend({
+        ...sectionsFor("blogIndex"),
         layout: z.literal("blog").default("blog").editor({ hidden: true }),
       }),
     }),
@@ -78,6 +130,7 @@ export default defineContentConfig({
       type: "page",
       source: pageSources.blog,
       schema: page.extend({
+        ...sectionsFor("blog"),
         layout: z
           .literal("article")
           .default("article")

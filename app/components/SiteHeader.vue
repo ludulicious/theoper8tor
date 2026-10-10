@@ -42,7 +42,11 @@ function escape(event: KeyboardEvent) {
           v-for="item in data?.menu?.items"
           :key="item.to"
           :to="item.to"
-          :aria-current="route.path === item.to ? 'page' : undefined"
+          :aria-current="
+            route.path === item.to || route.path.startsWith(`${item.to}/`)
+              ? 'page'
+              : undefined
+          "
           >{{ item.label }}</NuxtLink
         >
         <NuxtLink

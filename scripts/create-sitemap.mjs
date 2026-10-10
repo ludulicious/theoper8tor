@@ -42,7 +42,7 @@ for (const file of readdirSync(`${root}/content/07.photos`).filter(
     .filter(
       (page) =>
         page.body.includes(photo.image.src) ||
-        page.data.image?.src === photo.image.src,
+        JSON.stringify(page.data).includes(photo.image.src),
     )
     .map((page) => page.path);
   preview[`content/07.photos/${file}`] = matches.length ? matches : "/";
@@ -54,7 +54,11 @@ for (const file of readdirSync(`${root}/content/09.videos`).filter(
   preview[`content/09.videos/${file}`] = [
     "/videos",
     ...pages
-      .filter((page) => page.body.includes(`video="${slug}"`))
+      .filter(
+        (page) =>
+          page.body.includes(`video="${slug}"`) ||
+          JSON.stringify(page.data).includes(`"video":"${slug}"`),
+      )
       .map((page) => page.path),
   ];
 }

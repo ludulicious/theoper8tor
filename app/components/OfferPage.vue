@@ -4,6 +4,8 @@ const { data: offer } = await useAsyncData(
   () => `offer:${props.path}`,
   () => queryCollection("offers").path(props.path).first(),
 );
+provide("sectionPage", offer);
+provide("contentImageSizes", ref("100vw 375:90vw 640:92vw 788:740px"));
 const price = computed(() =>
   offer.value?.price === undefined
     ? ""
@@ -37,7 +39,7 @@ const price = computed(() =>
     </section>
     <div class="offer-body"><ContentRenderer :value="offer" /></div>
     <div class="offer-back">
-      <NuxtLink to="/book-online" class="text-link"
+      <NuxtLink to="/book-a-session" class="text-link"
         >← Compare all sessions</NuxtLink
       >
     </div>

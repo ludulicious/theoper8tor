@@ -442,3 +442,83 @@
 .services-page .story-hero {
   padding-bottom: var(--space-section-compact);
 }
+
+/* Named content sections share the existing page layouts. */
+.editable-section .section-copy > h1,
+.editable-section .section-copy > h2 {
+  text-align: left;
+}
+.editable-section.photo-story .photo-story-image {
+  grid-column: 1;
+  grid-row: 1;
+}
+.editable-section.photo-story .photo-story-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+.section-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+}
+.section-images > * {
+  max-width: 100%;
+}
+.section-images img {
+  max-height: 680px;
+  width: auto;
+  object-fit: contain;
+}
+.offer-body .editable-section {
+  padding: 0;
+  margin-bottom: 2rem;
+  border: 0;
+}
+@media (max-width: 767px) {
+  .editable-section.photo-story .photo-story-image {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .editable-section.photo-story .photo-story-copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+.sales-page .section-copy > p,
+.sales-page .section-copy > ul,
+.sales-page .section-copy > ol {
+  max-width: 780px;
+}
+.sales-page .section-copy > h1,
+.sales-page .section-copy > h2 {
+  max-width: 850px;
+}
+/* Keep the booking action readable when its route is active. */
+#main-navigation .connect-link,
+#main-navigation .connect-link[aria-current="page"],
+#main-navigation .connect-link:hover,
+#main-navigation .connect-link:focus-visible {
+  color: var(--color-black);
+}
+
+/* Breadcrumb text starts at the same edge as each page's content. */
+.breadcrumb {
+  width: 100%;
+  max-width: 1048px;
+}
+.sales-page > .breadcrumb {
+  max-width: calc(var(--width-sales) + 48px);
+}
+.article-page > .breadcrumb {
+  max-width: 828px;
+}
+.sales-page:has(> .offer-page) > .breadcrumb {
+  max-width: var(--width-sales);
+}

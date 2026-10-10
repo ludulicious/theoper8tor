@@ -12,13 +12,20 @@ const { data: page } = await useAsyncData(
 );
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
+provide("sectionPage", page);
 const breadcrumbs = computed(
   () =>
     page.value?.breadcrumbs || [
       { label: "Home", to: "/" },
       ...(props.collection === "offers"
-        ? [{ label: "Book Now", to: "/book-online" }]
-        : []),
+        ? [{ label: "Book a session", to: "/book-a-session" }]
+        : path.value.startsWith("/book-a-session/")
+          ? [{ label: "Book a session", to: "/book-a-session" }]
+          : path.value.startsWith("/resources/")
+            ? [{ label: "Resources", to: "/resources" }]
+            : props.collection === "blog"
+              ? [{ label: "Blog", to: "/blog" }]
+              : []),
       { label: page.value?.title },
     ],
 );
@@ -61,7 +68,7 @@ const { data: posts } = await useAsyncData("blog-list", () =>
       {
         'home-page': path === '/',
         'article-page': page.layout === 'article',
-        'booking-page': path === '/book-online',
+        'booking-page': path === '/book-a-session',
         'services-page': collection === 'services',
         'sales-page': page.sales,
       },
