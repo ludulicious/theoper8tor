@@ -6,6 +6,7 @@ const image = z.object({
 });
 const link = z.object({ label: z.string(), to: z.string() });
 const page = z.object({
+  thumbnail: image.optional(),
   title: z.string().min(1),
   description: z.string(),
   seoTitle: z.string().optional().editor({ hidden: true }),
@@ -46,6 +47,7 @@ export default defineContentConfig({
         cta: link,
         secondaryCta: link,
         image: image.optional(),
+        thumbnail: image.optional(),
         pageName: z.string().optional().editor({ hidden: true }),
         seoTitle: z.string().optional().editor({ hidden: true }),
         seoDescription: z.string().optional().editor({ hidden: true }),
@@ -183,6 +185,7 @@ export default defineContentConfig({
         name: z.string(),
         url: z.string().url(),
         logo: image,
+        sharingImage: image.optional(),
         headerLogo: image.optional(),
         footerLogo: image.optional(),
         phone: z.string(),

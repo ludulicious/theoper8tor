@@ -289,3 +289,73 @@ test("blog stories use ordinary Markdown without section tabs or duplicate title
     if (page.collection === "blog") assert.ok(page.body.trim(), page.file);
   }
 });
+
+test("sharing previews prefer thumbnails, keep page images and always have a default", async () => {
+  const { sharingImage } = await import("../shared/sharing-image.mjs");
+  const site = {
+    url: "https://theoper8tor.com",
+    sharingImage: { src: "/images/default.jpg", alt: "Default" },
+  };
+  const image = { src: "/images/page.jpg", alt: "Page" };
+  const thumbnail = { src: "/images/thumb.jpg", alt: "Thumbnail" };
+  const photos = [{ image, thumbnail }];
+  assert.equal(
+    sharingImage(
+      { image, thumbnail: { src: "/images/override.jpg" } },
+      site,
+      photos,
+    ).src,
+    "https://theoper8tor.com/images/override.jpg",
+  );
+  assert.equal(
+    sharingImage({ image }, site, photos).src,
+    "https://theoper8tor.com/images/thumb.jpg",
+  );
+  assert.equal(sharingImage({ image }, site).alt, "Page");
+  assert.equal(
+    sharingImage(
+      { body: { type: "root", value: [["p", {}, ["img", image]]] } },
+      site,
+      photos,
+    ).src,
+    "https://theoper8tor.com/images/thumb.jpg",
+  );
+  assert.equal(
+    sharingImage(
+      { youtubeId: "49rddBl7nwI" },
+      site,
+      [],
+      [{ youtubeId: "49rddBl7nwI", image }],
+    ).src,
+    "https://theoper8tor.com/images/page.jpg",
+  );
+  assert.equal(
+    sharingImage({ thumbnail: { src: "javascript:invalid" } }, site).src,
+    "https://theoper8tor.com/images/default.jpg",
+  );
+  const settings = parse(
+    readFileSync(`${root}/content/08.settings/site.yml`, "utf8"),
+  );
+  const library = (directory) =>
+    readdirSync(`${root}/content/${directory}`)
+      .filter((file) => file.endsWith(".yml") && !file.startsWith("."))
+      .map((file) =>
+        parse(readFileSync(`${root}/content/${directory}/${file}`, "utf8")),
+      );
+  for (const page of pages) {
+    const selected = sharingImage(
+      { ...page.data, body: page.body },
+      settings,
+      library("07.photos"),
+      library("09.videos"),
+    );
+    const url = new URL(selected.src);
+    assert.equal(url.protocol, "https:", page.file);
+    assert.ok(selected.alt, page.file);
+    if (url.origin === settings.url)
+      assert.ok(
+        existsSync(`${root}/public${url.pathname}`),
+        `${page.file}: ${url.pathname}`,
+      );
+  }
+});

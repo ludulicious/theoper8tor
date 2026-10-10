@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { sharingImage } from "~~/shared/sharing-image.mjs";
 import { pageSources } from "~~/shared/content-sources.mjs";
 const props = defineProps<{ collection: keyof typeof pageSources }>();
 const route = useRoute();
@@ -45,14 +46,35 @@ const canonical = computed(
   () =>
     `${settings.value?.site?.url || "https://theoper8tor.com"}${encodeURI(path.value)}`,
 );
+const { data: sharingMedia } = await useAsyncData("sharing-media", async () => {
+  const [photos, videos] = await Promise.all([
+    queryCollection("photos").all(),
+    queryCollection("videos").all(),
+  ]);
+  return { photos, videos };
+});
+const socialImage = computed(() =>
+  sharingImage(
+    page.value,
+    settings.value?.site,
+    sharingMedia.value?.photos,
+    sharingMedia.value?.videos,
+  ),
+);
 useSeoMeta({
   title: () => page.value?.seoTitle || page.value?.title,
   description: () => page.value?.seoDescription || page.value?.description,
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.seoDescription || page.value?.description,
   ogUrl: () => canonical.value,
-  ogImage: () =>
-    `${settings.value?.site?.url}${settings.value?.site?.logo.src}`,
+  ogImage: () => socialImage.value?.src,
+  ogImageAlt: () => socialImage.value?.alt,
+  ogType: () => (page.value?.layout === "article" ? "article" : "website"),
+  twitterImage: () => socialImage.value?.src,
+  twitterImageAlt: () => socialImage.value?.alt,
+  twitterTitle: () => page.value?.seoTitle || page.value?.title,
+  twitterDescription: () =>
+    page.value?.seoDescription || page.value?.description,
   ogLocale: "en_US",
   twitterCard: "summary_large_image",
 });
