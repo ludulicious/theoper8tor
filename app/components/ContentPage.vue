@@ -113,7 +113,7 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         >
       </template>
     </nav>
-    <MainPage v-if="mainPage" :page="mainPage" />
+    <MainPage v-if="mainPage" :page="mainPage" :photos="sharingMedia?.photos" />
     <OfferPage v-else-if="collection === 'offers'" :path="path" />
     <DocumentPage v-else :page="page" />
     <div v-if="page.layout === 'blog'" class="blog-grid">

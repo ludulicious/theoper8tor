@@ -1,6 +1,26 @@
 <script setup lang="ts">
-import type { ContentCollectionItem } from "@nuxt/content";
-defineProps<{ page: ContentCollectionItem }>();
+import type {
+  ContentCollectionItem,
+  PhotosCollectionItem,
+} from "@nuxt/content";
+const props = defineProps<{
+  page: ContentCollectionItem;
+  photos?: PhotosCollectionItem[];
+}>();
+const thumbnail = computed(
+  () =>
+    props.photos?.find((photo) => photo.image.src === props.page.image?.src)
+      ?.thumbnail,
+);
+const image = useImage();
+const mobileImage = computed(() =>
+  thumbnail.value
+    ? image.getSizes(thumbnail.value.src, {
+        sizes: "100vw 375:90vw 480:92vw",
+        densities: "1x 2x",
+      })
+    : null,
+);
 </script>
 <template>
   <div class="main-page-content">
@@ -28,19 +48,22 @@ defineProps<{ page: ContentCollectionItem }>();
             }}</NuxtLink>
           </p>
         </div>
-        <div v-if="page.image" class="story-hero-image">
+        <picture v-if="page.image" class="story-hero-image">
+          <source
+            v-if="mobileImage"
+            media="(max-width: 767px)"
+            :srcset="mobileImage.srcset"
+            :sizes="mobileImage.sizes"
+          />
           <NuxtImg
             :src="page.image.src"
             :alt="page.image.alt"
             sizes="100vw 375:90vw 480:92vw md:40vw lg:40vw 1150:441px"
             densities="1x 2x"
-            width="640"
-            height="800"
-            fit="outside"
             loading="eager"
             fetchpriority="high"
           />
-        </div>
+        </picture>
       </div>
     </section>
     <section v-if="page.sessions" id="sessions" class="site-section">

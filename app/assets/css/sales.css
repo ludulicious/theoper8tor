@@ -251,8 +251,9 @@
   }
   .story-hero-image img {
     min-height: 0;
-    max-height: 400px;
-    aspect-ratio: 4 / 3;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
     object-position: var(--photo-mobile-position, center 22%);
   }
   .offer-row {

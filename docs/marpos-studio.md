@@ -131,3 +131,5 @@ Every page supplies an absolute image URL for Open Graph and Twitter/X previews.
 Social platforms cache link previews; an already-shared URL may need refreshing through that platform before a changed image appears.
 
 **Site → URL** must match the public deployment domain (currently `https://theoper8tor.marpos.nl`). Sharing images, canonical links and the sitemap use this address. Update it when moving to the final domain; that domain must serve the same image files publicly.
+
+On mobile, the six main pages use the selected Photos library item’s thumbnail when available. Otherwise the full image is shown. Both keep their natural proportions rather than using a forced 4:3 crop; desktop images keep their existing layout. **Thumbnail** in a page’s Details remains the separate sharing-image override.
