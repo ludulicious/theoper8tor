@@ -19,10 +19,12 @@ function escape(event: KeyboardEvent) {
   <header class="site-header" @keydown="escape">
     <div class="header-inner">
       <NuxtLink to="/" class="brand" :aria-label="data?.site?.name"
-        ><img
+        ><NuxtImg
           v-if="logo"
           :src="logo.src"
           :alt="logo.alt"
+          sizes="46vw 435:200px"
+          densities="1x 2x"
           width="312"
           height="128"
       /></NuxtLink>

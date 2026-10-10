@@ -51,6 +51,7 @@ watch(category, () => {
         v-for="video in videos"
         :key="video.id"
         :video="video"
+        sizes="100vw 375:90vw 641:46vw 1048:484px"
         :active="active === video.id"
         @play="active = video.id"
       />

@@ -22,6 +22,16 @@ const breadcrumbs = computed(
       { label: page.value?.title },
     ],
 );
+provide(
+  "contentImageSizes",
+  computed(() =>
+    page.value?.layout === "article"
+      ? "100vw 375:90vw 640:92vw 828:780px"
+      : page.value?.sales
+        ? "100vw 375:90vw 640:92vw 1150:1100px"
+        : "100vw 375:90vw 640:92vw 1048:1000px",
+  ),
+);
 const canonical = computed(
   () =>
     `${settings.value?.site?.url || "https://theoper8tor.com"}${encodeURI(path.value)}`,
@@ -84,10 +94,14 @@ const { data: posts } = await useAsyncData("blog-list", () =>
     <div v-if="page.layout === 'blog'" class="blog-grid">
       <article v-for="post in posts" :key="post.path">
         <NuxtLink :to="post.path"
-          ><img
+          ><NuxtImg
             v-if="post.image"
             :src="post.image.src"
             :alt="post.image.alt"
+            sizes="100vw 375:90vw 601:46vw 1050:483px"
+            densities="1x 2x"
+            width="966"
+            height="544"
             loading="lazy"
           />
           <h2>{{ post.title }}</h2></NuxtLink

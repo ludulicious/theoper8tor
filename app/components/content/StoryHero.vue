@@ -21,9 +21,12 @@ defineProps<{
         <slot />
       </div>
       <div class="story-hero-image">
-        <img
+        <NuxtImg
           :src="image"
           :alt="alt"
+          sizes="100vw 375:90vw 480:92vw md:40vw lg:40vw 1150:434px"
+          densities="1x 2x"
+          fit="outside"
           width="640"
           height="800"
           fetchpriority="high"

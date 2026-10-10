@@ -6,8 +6,13 @@ defineProps<{
     image: { src: string; alt: string };
   };
   active: boolean;
+  sizes?: string;
 }>();
 defineEmits<{ play: [] }>();
+const contentSizes = inject<Ref<string>>(
+  "contentImageSizes",
+  ref("100vw 375:90vw 640:92vw 1048:1000px"),
+);
 </script>
 <template>
   <figure class="video-card">
@@ -25,12 +30,14 @@ defineEmits<{ play: [] }>();
       :aria-label="`Play ${video.title}`"
       @click="$emit('play')"
     >
-      <img
+      <NuxtImg
         :src="video.image.src"
         :alt="video.image.alt"
+        :sizes="sizes || contentSizes"
+        densities="1x 2x"
         loading="lazy"
-        width="480"
-        height="360"
+        width="960"
+        height="540"
       />
       <span class="video-play" aria-hidden="true">▶</span>
       <span class="video-play-label">Play video</span>

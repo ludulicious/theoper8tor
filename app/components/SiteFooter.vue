@@ -8,10 +8,13 @@ const logo = computed(
   <footer class="site-footer">
     <div class="footer-inner">
       <NuxtLink to="/" class="footer-brand"
-        ><img
+        ><NuxtImg
           v-if="logo"
           :src="logo.src"
           :alt="logo.alt"
+          sizes="240px"
+          densities="1x 2x"
+          loading="lazy"
           width="312"
           height="128"
       /></NuxtLink>
