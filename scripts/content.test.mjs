@@ -18,7 +18,8 @@ test("all pages have unique public addresses and required copy", () => {
     assert.ok(page.data.title?.trim(), page.file);
     assert.ok(page.data.description?.trim(), page.file);
     assert.ok(
-      page.data.studio?.blocks.some((block) => page.data[block.field]?.title),
+      page.collection === "content" ||
+        page.data.studio?.blocks.some((block) => page.data[block.field]?.title),
       page.file,
     );
   }
@@ -33,7 +34,7 @@ test("ordering numbers do not change page addresses; new pages inherit collectio
     "/blog/new-article",
   );
   assert.equal(
-    pagePath("02.how-can-help.md", pageSources.services),
+    pagePath("pages/01.how-can-help.md", pageSources.content),
     "/how-can-help",
   );
 });
@@ -109,7 +110,10 @@ test("service URLs are nested under book-a-session and old URLs redirect directl
   assert.ok(offers.length >= 7);
   for (const offer of offers) {
     assert.ok(offer.path.startsWith("/book-a-session/"), offer.path);
-    assert.equal(redirects[offer.path.replace("/book-a-session/", "/services/")], offer.path);
+    assert.equal(
+      redirects[offer.path.replace("/book-a-session/", "/services/")],
+      offer.path,
+    );
     for (const [oldPath, destination] of Object.entries(redirects)) {
       if (destination !== offer.path) continue;
       for (const page of pages) {
@@ -146,10 +150,7 @@ test("consultations have complete scopes and valid provider booking destinations
   assert.ok(offers.some((offer) => offer.data.featured));
   for (const path of ["/", "/book-a-session"]) {
     const page = pages.find((page) => page.path === path);
-    assert.ok(
-      page.data.studio.blocks.some((block) => page.data[block.field]?.sessions),
-      path,
-    );
+    assert.ok(page.data.sessions, path);
     assert.doesNotMatch(
       page.body,
       /provider-embed/,
@@ -161,6 +162,7 @@ test("consultations have complete scopes and valid provider booking destinations
 // These checks cover the editing contract: every section tab must own its copy and fields.
 test("Studio sections have unique slots, editable fields and valid media and actions", () => {
   for (const page of pages) {
+    if (page.collection === "content") continue;
     const blocks = page.data.studio?.blocks;
     assert.ok(blocks?.length, page.file);
     assert.equal(
@@ -243,5 +245,38 @@ test("menu routes match their labels and content links use canonical routes", ()
         !redirects[match[1].split(/[?#]/)[0]],
         `${page.file}: obsolete ${match[1]}`,
       );
+  }
+});
+
+// Main pages must stay readable in Studio's ordinary visual Markdown editor.
+test("six main pages share Pages with simple Details and plain Markdown stories", () => {
+  const main = pages.filter((page) => page.collection === "content");
+  assert.deepEqual(
+    main.map((page) => page.path).sort(),
+    [
+      "/",
+      "/how-can-help",
+      "/meet-staci",
+      "/speaking",
+      "/contact",
+      "/book-a-session",
+    ].sort(),
+  );
+  for (const page of main) {
+    for (const field of [
+      "eyebrow",
+      "title",
+      "description",
+      "cta",
+      "secondaryCta",
+    ])
+      assert.ok(page.data[field], `${page.file}: ${field}`);
+    assert.doesNotMatch(page.body, /^:{2,}|^#[a-z]/m, page.file);
+    const blocks = page.data.studio?.blocks || [];
+    assert.ok(blocks.length <= 1, page.file);
+    for (const block of blocks) {
+      assert.equal(block.type, "fields");
+      assert.ok(page.data[block.field], page.file);
+    }
   }
 });

@@ -522,3 +522,22 @@
 .sales-page:has(> .offer-page) > .breadcrumb {
   max-width: var(--width-sales);
 }
+
+/* Main pages expose an ordinary Markdown story and a compact Details form. */
+.main-introduction.without-image .story-hero-inner {
+  display: block;
+}
+.main-introduction.without-image .story-hero-copy {
+  max-width: 850px;
+}
+.main-story .section-copy > h2:not(:first-child) {
+  margin-top: 3rem;
+}
+.main-story .section-copy > p:has(img) {
+  margin-block: 2rem;
+}
+.main-story .section-copy img {
+  max-width: min(100%, 440px);
+  max-height: 560px;
+  object-fit: contain;
+}

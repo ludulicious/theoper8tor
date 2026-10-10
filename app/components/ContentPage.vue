@@ -13,6 +13,9 @@ const { data: page } = await useAsyncData(
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
 provide("sectionPage", page);
+const mainPage = computed(() =>
+  page.value && "cta" in page.value ? page.value : null,
+);
 const breadcrumbs = computed(
   () =>
     page.value?.breadcrumbs || [
@@ -26,7 +29,7 @@ const breadcrumbs = computed(
             : props.collection === "blog"
               ? [{ label: "Blog", to: "/blog" }]
               : []),
-      { label: page.value?.title },
+      { label: page.value?.pageName || page.value?.title },
     ],
 );
 provide(
@@ -45,9 +48,9 @@ const canonical = computed(
 );
 useSeoMeta({
   title: () => page.value?.seoTitle || page.value?.title,
-  description: () => page.value?.description,
+  description: () => page.value?.seoDescription || page.value?.description,
   ogTitle: () => page.value?.title,
-  ogDescription: () => page.value?.description,
+  ogDescription: () => page.value?.seoDescription || page.value?.description,
   ogUrl: () => canonical.value,
   ogImage: () =>
     `${settings.value?.site?.url}${settings.value?.site?.logo.src}`,
@@ -69,7 +72,7 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         'home-page': path === '/',
         'article-page': page.layout === 'article',
         'booking-page': path === '/book-a-session',
-        'services-page': collection === 'services',
+        'services-page': path === '/how-can-help',
         'sales-page': page.sales,
       },
     ]"
@@ -89,8 +92,9 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         >
       </template>
     </nav>
+    <MainPage v-if="mainPage" :page="mainPage" />
     <OfferPage
-      v-if="
+      v-else-if="
         collection === 'offers' &&
         'kind' in page &&
         page.kind === 'consultation'

@@ -59,6 +59,8 @@ const page = z.object({
   title: z.string().min(1),
   description: z.string(),
   seoTitle: z.string().optional(),
+  seoDescription: z.string().optional().editor({ hidden: true }),
+  pageName: z.string().optional().editor({ hidden: true }),
   sales: z.boolean().default(false).editor({ hidden: true }),
   breadcrumbs: z
     .array(
@@ -72,20 +74,58 @@ const page = z.object({
 const story = z.literal("story").default("story").editor({ hidden: true });
 export default defineContentConfig({
   collections: {
-    home: defineCollection({
+    content: defineCollection({
       type: "page",
-      source: pageSources.home,
-      schema: page.extend({ ...sectionsFor("home"), layout: story }),
-    }),
-    speaker: defineCollection({
-      type: "page",
-      source: pageSources.speaker,
-      schema: page.extend({ ...sectionsFor("speaker"), layout: story }),
-    }),
-    services: defineCollection({
-      type: "page",
-      source: pageSources.services,
-      schema: page.extend({ ...sectionsFor("services"), layout: story }),
+      source: pageSources.content,
+      schema: z.object({
+        eyebrow: z.string(),
+        title: z.string().min(1),
+        description: z.string(),
+        cta: link,
+        secondaryCta: link,
+        image: image.optional(),
+        pageName: z.string().optional().editor({ hidden: true }),
+        seoTitle: z.string().optional().editor({ hidden: true }),
+        seoDescription: z.string().optional().editor({ hidden: true }),
+        breadcrumbs: z
+          .array(z.object({ label: z.string(), to: z.string().optional() }))
+          .optional()
+          .editor({ hidden: true }),
+        layout: z.literal("main").default("main").editor({ hidden: true }),
+        sales: z.boolean().default(true).editor({ hidden: true }),
+        imagePosition: z.string().optional().editor({ hidden: true }),
+        mobileImagePosition: z.string().optional().editor({ hidden: true }),
+        sessions: z
+          .object({
+            title: z.string(),
+            description: z.string(),
+            featuredOnly: z.boolean().default(false),
+            cta: link.optional(),
+          })
+          .optional()
+          .editor({ hidden: true }),
+        contactForm: z
+          .object({
+            src: z.string().url(),
+            title: z.string(),
+            kind: z.string().optional().editor({ hidden: true }),
+          })
+          .optional()
+          .editor({ hidden: true }),
+        studio: z
+          .object({
+            blocks: z.array(
+              z.object({
+                id: z.string(),
+                label: z.string(),
+                type: z.literal("fields"),
+                field: z.string(),
+              }),
+            ),
+          })
+          .optional()
+          .editor({ hidden: true }),
+      }),
     }),
     offers: defineCollection({
       type: "page",
@@ -107,11 +147,6 @@ export default defineContentConfig({
       type: "page",
       source: pageSources.booking,
       schema: page.extend({ ...sectionsFor("booking"), layout: story }),
-    }),
-    contact: defineCollection({
-      type: "page",
-      source: pageSources.contact,
-      schema: page.extend({ ...sectionsFor("contact"), layout: story }),
     }),
     information: defineCollection({
       type: "page",

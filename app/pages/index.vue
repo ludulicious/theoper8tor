@@ -1,1 +1,1 @@
-<template><ContentPage collection="home" /></template>
+<template><ContentPage collection="content" /></template>

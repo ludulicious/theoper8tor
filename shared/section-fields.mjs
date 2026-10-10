@@ -1,23 +1,5 @@
-// Section fields grouped by collection. Hidden from Details; edited through named Studio tabs.
+// Supporting-page section fields. Main pages use ordinary Markdown and shared Details.
 export const sectionFields = {
-  home: [
-    "introduction",
-    "whereAreYouRightNow",
-    "yourIdeasMyPerspectiveAndConnections",
-    "whatWorkingTogetherLooksLike",
-    "bringingPeopleTogetherIsPartOfThe",
-  ],
-  speaker: [
-    "introduction",
-    "theRightRoleForYourEvent",
-    "businessSupportBetweenEvents",
-  ],
-  services: [
-    "introduction",
-    "whatDoYouWantToWorkOn",
-    "howWeWorkTogether",
-    "experienceAndConnections",
-  ],
   offers: [
     "startWithWhatIsOnYourMind",
     "whatWeWillCover",
@@ -36,13 +18,12 @@ export const sectionFields = {
     "exploreTheOptions",
   ],
   booking: [
-    "chooseAndBookYourSession",
-    "compareConsultationsAndStrategySessions",
-    "needAWiderEngagement",
     "photograph",
     "scheduleAVirtualCoffeeWTheopert8tor",
     "letsFindOutHowICanConnect",
     "virtualCoffeeWithTheOper8tor",
+    "scheduleAVirtualCoffeeWTheoper8tor",
+    "intentionalCoffeeChat",
     "thanksForGettingReadyToScale",
     "theNextStepIsToBookYour",
     "readyToScaleVision",
@@ -50,10 +31,7 @@ export const sectionFields = {
     "photograph6",
     "readyToScaleVocal",
     "readyToScaleVisible",
-    "scheduleAVirtualCoffeeWTheoper8tor",
-    "intentionalCoffeeChat",
   ],
-  contact: ["letsTalkAboutWhatYouNeed"],
   information: [
     "resourcesForYourNextStep",
     "planAndOrganise",
@@ -81,10 +59,10 @@ export const sectionFields = {
     "externalLinksDisclaimer",
     "professionalDisclaimer",
     "affiliatesDisclaimer",
-    "introduction",
-    "aBackgroundInPeopleAndBusiness",
-    "howThatShapesOurWork",
-    "needAVoiceForYourEvent",
+    "oper8te911411311",
+    "joinToBeAFoundingOper8torToday",
+    "videos",
+    "videoLibrary",
     "thePassionToProfitPlanner",
     "section90dayGoalSettingRevenueGrowthPlanner",
     "whatMakesThisPlannerUnique",
@@ -93,10 +71,6 @@ export const sectionFields = {
     "whatsIncludedInThePlanner",
     "yourVisionaryStrategist",
     "bookAnAiStrategyConversation",
-    "oper8te911411311",
-    "joinToBeAFoundingOper8torToday",
-    "videos",
-    "videoLibrary",
   ],
   blogIndex: ["officialBlog"],
   blog: [

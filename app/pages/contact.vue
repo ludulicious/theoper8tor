@@ -1,1 +1,1 @@
-<template><ContentPage collection="contact" /></template>
+<template><ContentPage collection="content" /></template>

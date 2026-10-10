@@ -10,36 +10,33 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 
 ## Where to edit
 
-| Collection  | Location                                          | Purpose                                                                |
-| ----------- | ------------------------------------------------- | ---------------------------------------------------------------------- |
-| Home        | `content/00.index.md`                             | Homepage sections and calls to action                                     |
-| Speaker     | `content/01.speaking.md`                           | Speaking, interviewing and training                                    |
-| Services    | `content/02.how-can-help.md`                 | Services overview                                                      |
-| Offers      | `content/02.services/*.md` excluding the overview | Consultations and programmes                                           |
-| Booking     | `content/03.booking/`                             | Booking list and calendar pages                                        |
-| Contact     | `content/04.contact.md`                           | Contact introduction and form                                          |
-| Information | `content/05.information/`                         | Shop, Connect, schedule, disclaimer, About, planner, AI and newsletter |
-| Blog Index  | `content/06.blog/00.index.md`                     | Blog introduction                                                      |
-| Blog        | `content/06.blog/` excluding the overview         | Articles, automatically listed on Blog                                 |
-| Photos      | `content/07.photos/`                              | Image library                                                          |
-| Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility             |
-| Menu / Site | `content/08.settings/`                            | Navigation, logo, contact details and footer                           |
+| Collection        | Location                                   | Purpose                                                                      |
+| ----------------- | ------------------------------------------ | ---------------------------------------------------------------------------- |
+| Pages             | `content/pages/*.md`                       | Home, How I can help, Meet Staci, Speaking, Contact, Book a session          |
+| Offers            | `content/02.services/*.md`                 | Individual consultations and programmes                                      |
+| Booking           | `content/03.booking/`                      | Coffee and programme calendars                                               |
+| Information       | `content/05.information/`                  | Resources, Connect, schedule, disclaimer, planner, AI, newsletter and videos |
+| Blog Index / Blog | `content/06.blog/`                         | Blog introduction and articles                                               |
+| Photos / Videos   | `content/07.photos/`, `content/09.videos/` | Media libraries                                                              |
+| Menu / Site       | `content/08.settings/`                     | Navigation, logos, contact details and footer                                |
 
-Each page has Title, Description and optional SEO Title. Optional Breadcrumbs let you set an ordered trail of labels and links; leave the final item without a link. If omitted, the page uses Home and its title; offers include Book a session between them. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap. Header Logo and Footer Logo select separate transparent PNG wordmarks suited to the dark header and footer, with gold lettering and ivory accents. The original Logo stays available for social sharing and as a fallback.
+## The six main pages
 
-## Named page sections
+Open **Pages**, then choose the page you want to update. The **Details** tab contains Eyebrow, Title, Description, CTA, Secondary CTA and Image. CTA fields have a label and destination. The image picker also provides alternative text. A page without a photograph can leave Image empty.
 
-Pages follow the Amstel Gospel Choir homepage editing pattern: choose a named section tab, such as **Introduction**, **Where are you right now?**, or **What is included**. Each tab contains its own Title, Eyebrow, Image (with the media picker and alternative text), Actions, Links and Visible switch where applicable. Edit the paragraphs and lists in the visual text editor directly below those fields. There is no need to find or edit nested components.
+The **Story** tab is regular Markdown with visual editing: write paragraphs, change headings, add lists or links, and insert photographs. There are no component wrappers, named slots or tabs for individual headings. Main story headings are level 2 or 3 because the page title is rendered from Details.
 
-The **Details** tab contains the page title, search description, breadcrumbs and any collection-specific settings. Section settings are kept out of Details. Session pages keep Price, Duration, Summary, Best For, Booking URL, Featured and Order in Details, so listing cards and the booking summary continue to share one source.
+Home and Book a session also have a **Sessions** tab for the comparison heading, short introduction and featured-session setting. Prices, durations and offer descriptions remain in **Offers**, their single source of truth. Contact has a **Contact form** tab for the existing provider's URL and accessible title. These special sections render automatically outside the Markdown story.
 
-Forms have an editable source URL and title in their section. Session comparison sections have a Featured Only switch. Video sections reference the Videos library. These render automatically; the text editor contains ordinary Markdown only.
+The short page name is developer-owned `pageName` metadata. Studio uses it to identify pages without tying the page list to the website headline. Search titles and descriptions are preserved separately and hidden from routine editing.
 
-All pages use one `::page-sections` container, with one named Markdown slot per section. The hidden `studio.blocks` configuration maps each tab to its slot and section fields. Preserve that mapping in source mode. The reusable `PageSections.vue` renderer handles the layout; text, images and actions live in the content file. New section field names must also be added to the collection in `shared/section-fields.mjs` by a developer.
+## Supporting pages
+
+Individual offers, calendars, information and blog pages retain their existing named section tabs. Their text and settings are edited in those sections; their Details fields include relevant prices, durations, provider links or article metadata. `PageSections.vue` renders these supporting pages. Main pages use `MainPage.vue` and ordinary Markdown instead.
 
 ## New content and ordering
 
-For a new page with named sections, start from a similar existing content file so its section fields, Studio tabs and text slots stay connected. A developer can add or rename section types in `shared/section-fields.mjs`. Choose Add content in Offers, Booking, Information or Blog for the new document. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
+For a new supporting page with named sections, start from a similar existing content file so its section fields, Studio tabs and text slots stay connected. A developer can add or rename section types in `shared/section-fields.mjs`. Choose Add content in Offers, Booking, Information or Blog for the new document. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
 
 - `content/02.services/08.new-consultation.md` → `/book-a-session/new-consultation`
 - `content/05.information/08.new-page.md` → `/new-page`
@@ -104,3 +101,11 @@ Website images render through `NuxtImg` with responsive source sets and 1×/2× 
 - Affiliate Disclaimer: `/affiliate-disclaimer`.
 
 All former public addresses redirect directly to their current destination with status 301. Internal links, breadcrumbs, previews and the sitemap use the current routes. Section field names are stable and do not depend on public route slugs.
+
+## Nuxt page routing
+
+`app/pages/book-a-session/index.vue` renders the booking overview. `app/pages/book-a-session/[slug].vue` renders individual offers directly from the Offers collection. Coffee calendars have their own routes in that folder; programme calendars use `ready-to-scale/[slug].vue`.
+
+`app/pages/blog/index.vue` renders the blog overview, and `app/pages/blog/[slug].vue` renders individual articles. Adding an offer or article with a new filename automatically gives it the matching detail route. The root catch-all handles only supporting Information pages.
+
+Resources uses `app/pages/resources/index.vue` for its overview and `app/pages/resources/[slug].vue` for resource details from the Information collection. New resource content under `content/05.information/resources/` automatically gets its matching detail route.

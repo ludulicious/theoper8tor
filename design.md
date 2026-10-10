@@ -12,4 +12,4 @@ Responsive: stack diptychs and session rows below 768px, retain readable button 
 
 ## Section editing
 
-Owner requested the Amstel Gospel Choir editing pattern: all pages expose named Studio tabs with structured titles, images and actions plus a short Markdown slot for each section. PageSections is the shared renderer; primary hero and photo layouts retain the established typography, imagery and responsive treatment. Text sections stack in reading order, removing nested grid/panel components from the editor.
+The six main pages share a Pages collection. Details owns eyebrow, title, description, primary and secondary CTA, and the hero image. The main story is plain Markdown without MDC wrappers. Only session comparisons and the contact provider have dedicated structured tabs. MainPage renders the shared introduction and these special sections; prose headings, lists, links and photographs belong to the story. Supporting pages retain their existing section renderer.
