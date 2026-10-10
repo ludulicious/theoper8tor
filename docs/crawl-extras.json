@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/about",
+    "source": "https://theoper8tor.com/about",
+    "response": "200|https://theoper8tor.com/about",
+    "file": "docs/source/about.html"
+  },
+  {
+    "path": "/affiliate",
+    "source": "https://theoper8tor.com/affiliate",
+    "response": "200|https://theoper8tor.com/affiliate",
+    "file": "docs/source/affiliate.html"
+  },
+  {
+    "path": "/blog",
+    "source": "https://theoper8tor.com/blog",
+    "response": "200|https://theoper8tor.com/blog",
+    "file": "docs/source/blog.html"
+  },
+  {
+    "path": "/funnel-mapping",
+    "source": "https://theoper8tor.com/funnel-mapping",
+    "response": "200|https://theoper8tor.com/funnel-mapping",
+    "file": "docs/source/funnel-mapping.html"
+  }
+]

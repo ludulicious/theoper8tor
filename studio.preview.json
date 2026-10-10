@@ -1,0 +1,268 @@
+{
+  "content/08.settings/site.yml": "/",
+  "content/08.settings/menu.yml": "/",
+  "content/00.index.md": "/",
+  "content/01.speaker.md": "/speaker",
+  "content/02.services/00.index.md": "/services",
+  "content/02.services/01.initial-consultation.md": "/initial-consultation",
+  "content/02.services/02.fastaction.md": "/fastaction",
+  "content/02.services/03.client-relations-retention.md": "/client-relations-retention",
+  "content/02.services/04.bbb.md": "/bbb",
+  "content/02.services/05.systems-audit.md": "/systems-audit",
+  "content/02.services/06.funnel-mapping.md": "/funnel-mapping",
+  "content/02.services/07.readytoscale.md": "/readytoscale",
+  "content/03.booking/00.book-online.md": "/book-online",
+  "content/03.booking/01.expertcoffeechat.md": "/expertcoffeechat",
+  "content/03.booking/02.bookingpagevision.md": "/bookingpagevision",
+  "content/03.booking/03.bookingpagevocal.md": "/bookingpagevocal",
+  "content/03.booking/04.bookingpagevisible.md": "/bookingpagevisible",
+  "content/03.booking/05.intentionalcoffeechat.md": "/intentionalcoffeechat",
+  "content/04.contact.md": "/contact",
+  "content/05.information/00.shop.md": "/shop",
+  "content/05.information/01.connect.md": "/connect",
+  "content/05.information/02.schedule.md": "/schedule",
+  "content/05.information/03.affiliate.md": "/affiliate",
+  "content/05.information/04.about.md": "/about",
+  "content/05.information/05.p2pplanner.md": "/p2pplanner",
+  "content/05.information/06.aicompanion.md": "/aicompanion",
+  "content/05.information/07.newsletter.md": "/newsletter",
+  "content/06.blog/00.index.md": "/blog",
+  "content/06.blog/01.what-is-imposter-syndrome.md": "/blog/b/what-is-imposter-syndrome",
+  "content/06.blog/02.google-account-purge.md": "/blog/b/google-account-purge",
+  "content/06.blog/03.is-entrepreneurship-the-path-for-you.md": "/blog/b/is-entrepreneurship-the-path-for-you",
+  "content/06.blog/04.5-myths-about-networking.md": "/blog/b/5-myths-about-networking",
+  "content/07.photos/03029f70b1db.yml": "/",
+  "content/07.photos/0384c30f013d.yml": [
+    "/expertcoffeechat",
+    "/intentionalcoffeechat"
+  ],
+  "content/07.photos/0477c0bfbed8.yml": [
+    "/connect"
+  ],
+  "content/07.photos/04f53e87d4e1.yml": [
+    "/connect"
+  ],
+  "content/07.photos/07a535e0eb94.yml": [
+    "/readytoscale",
+    "/bookingpagevision",
+    "/bookingpagevocal",
+    "/bookingpagevisible"
+  ],
+  "content/07.photos/0b0022b201ba.yml": [
+    "/services",
+    "/shop"
+  ],
+  "content/07.photos/0d3655ec5302.yml": "/",
+  "content/07.photos/1433fcbcce73.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/194cd733b00d.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/1e368ab08ae4.yml": [
+    "/newsletter"
+  ],
+  "content/07.photos/2094a54b3aa8.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/21938497a389.yml": [
+    "/blog/b/is-entrepreneurship-the-path-for-you"
+  ],
+  "content/07.photos/23b6e0c2683d.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/2a463f7f4ec2.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/2cfd1c0feaa8.yml": [
+    "/initial-consultation"
+  ],
+  "content/07.photos/309db67ac8b5.yml": "/",
+  "content/07.photos/342710a6cdfa.yml": [
+    "/fastaction"
+  ],
+  "content/07.photos/37f9ffc7dcb7.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/41b657dea49b.yml": "/",
+  "content/07.photos/47926b71bfb6.yml": [
+    "/p2pplanner"
+  ],
+  "content/07.photos/47d1abd378d5.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/4818ccd4512c.yml": [
+    "/connect"
+  ],
+  "content/07.photos/4ae3001a1f98.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/4bcf700b4877.yml": [
+    "/blog/b/what-is-imposter-syndrome",
+    "/blog/b/google-account-purge",
+    "/blog/b/is-entrepreneurship-the-path-for-you",
+    "/blog/b/5-myths-about-networking"
+  ],
+  "content/07.photos/4eb46ef1fcdd.yml": [
+    "/readytoscale",
+    "/bookingpagevision",
+    "/bookingpagevocal",
+    "/bookingpagevisible"
+  ],
+  "content/07.photos/4eb5e0bf6b19.yml": [
+    "/connect"
+  ],
+  "content/07.photos/5083f8685bd0.yml": [
+    "/services"
+  ],
+  "content/07.photos/521e81ef7ece.yml": [
+    "/readytoscale",
+    "/bookingpagevision",
+    "/bookingpagevocal",
+    "/bookingpagevisible"
+  ],
+  "content/07.photos/569f8fc1c9ec.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/5df8574ff9b6.yml": [
+    "/blog/b/5-myths-about-networking"
+  ],
+  "content/07.photos/61b9a746dc90.yml": [
+    "/connect"
+  ],
+  "content/07.photos/61e08b30e14c.yml": [
+    "/shop"
+  ],
+  "content/07.photos/706eccddfbd4.yml": [
+    "/aicompanion"
+  ],
+  "content/07.photos/76d5cfe4309f.yml": [
+    "/"
+  ],
+  "content/07.photos/86cafeac5a88.yml": [
+    "/speaker"
+  ],
+  "content/07.photos/8af3cfaaf812.yml": [
+    "/services",
+    "/shop"
+  ],
+  "content/07.photos/8b1f906d7931.yml": [
+    "/systems-audit"
+  ],
+  "content/07.photos/8c64d48379f5.yml": [
+    "/services",
+    "/shop"
+  ],
+  "content/07.photos/8f2a4e8ade5c.yml": [
+    "/connect"
+  ],
+  "content/07.photos/92b9bbac12cf.yml": [
+    "/about"
+  ],
+  "content/07.photos/954638e386c3.yml": [
+    "/readytoscale",
+    "/expertcoffeechat",
+    "/bookingpagevision",
+    "/bookingpagevocal",
+    "/bookingpagevisible",
+    "/intentionalcoffeechat",
+    "/aicompanion"
+  ],
+  "content/07.photos/9c2d4e9ea8d5.yml": [
+    "/connect"
+  ],
+  "content/07.photos/9d53416e6788.yml": [
+    "/connect"
+  ],
+  "content/07.photos/9f196af9ff11.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/a03ff202ecbe.yml": [
+    "/p2pplanner"
+  ],
+  "content/07.photos/a2d5245fd1a1.yml": [
+    "/newsletter"
+  ],
+  "content/07.photos/a334615960ae.yml": [
+    "/connect"
+  ],
+  "content/07.photos/a36f27bfab2d.yml": [
+    "/blog/b/google-account-purge"
+  ],
+  "content/07.photos/a68c0754e642.yml": [
+    "/blog/b/what-is-imposter-syndrome",
+    "/blog/b/google-account-purge",
+    "/blog/b/is-entrepreneurship-the-path-for-you",
+    "/blog/b/5-myths-about-networking"
+  ],
+  "content/07.photos/a973d5058381.yml": "/",
+  "content/07.photos/ab23be560c1b.yml": [
+    "/blog/b/what-is-imposter-syndrome"
+  ],
+  "content/07.photos/b3bd2509fa8e.yml": "/",
+  "content/07.photos/bc6f54bdb58b.yml": [
+    "/blog/b/is-entrepreneurship-the-path-for-you"
+  ],
+  "content/07.photos/bfa079cce84e.yml": [
+    "/about"
+  ],
+  "content/07.photos/c41ceba7b436.yml": "/",
+  "content/07.photos/c6b3750318d7.yml": [
+    "/"
+  ],
+  "content/07.photos/c8eed3855059.yml": [
+    "/about"
+  ],
+  "content/07.photos/ccf56c14da8c.yml": [
+    "/p2pplanner"
+  ],
+  "content/07.photos/cfeb9772d04d.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/d0869b022f79.yml": [
+    "/readytoscale",
+    "/bookingpagevision",
+    "/bookingpagevocal",
+    "/bookingpagevisible"
+  ],
+  "content/07.photos/d2e311a43407.yml": [
+    "/connect"
+  ],
+  "content/07.photos/d49da7d0f5b2.yml": [
+    "/about"
+  ],
+  "content/07.photos/d70142f31e8b.yml": [
+    "/client-relations-retention"
+  ],
+  "content/07.photos/d8a026449dc0.yml": [
+    "/services"
+  ],
+  "content/07.photos/e51b858fc130.yml": [
+    "/blog/b/google-account-purge"
+  ],
+  "content/07.photos/e727237a175d.yml": [
+    "/p2pplanner"
+  ],
+  "content/07.photos/eac6725b744f.yml": [
+    "/services"
+  ],
+  "content/07.photos/ef3f1cc464cd.yml": [
+    "/funnel-mapping"
+  ],
+  "content/07.photos/f2d8939b0807.yml": [
+    "/connect"
+  ],
+  "content/07.photos/f5a604bee4a6.yml": [
+    "/services",
+    "/shop"
+  ],
+  "content/07.photos/fa19c68f646a.yml": [
+    "/bbb"
+  ],
+  "content/07.photos/fdfad67491c3.yml": [
+    "/readytoscale"
+  ],
+  "content/07.photos/fe1862baf5ff.yml": [
+    "/readytoscale"
+  ]
+}

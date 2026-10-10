@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/blog/b/what-is-imposter-syndrome",
+    "source": "https://theoper8tor.com/blog/b/what-is-imposter-syndrome",
+    "response": "200|https://theoper8tor.com/blog/b/what-is-imposter-syndrome",
+    "file": "docs/source/blog__b__what-is-imposter-syndrome.html"
+  },
+  {
+    "path": "/blog/b/google-account-purge",
+    "source": "https://theoper8tor.com/blog/b/google-account-purge",
+    "response": "200|https://theoper8tor.com/blog/b/google-account-purge",
+    "file": "docs/source/blog__b__google-account-purge.html"
+  },
+  {
+    "path": "/blog/b/is-entrepreneurship-the-path-for-you",
+    "source": "https://theoper8tor.com/blog/b/is-entrepreneurship-the-path-for-you",
+    "response": "200|https://theoper8tor.com/blog/b/is-entrepreneurship-the-path-for-you",
+    "file": "docs/source/blog__b__is-entrepreneurship-the-path-for-you.html"
+  },
+  {
+    "path": "/blog/b/5-myths-about-networking",
+    "source": "https://theoper8tor.com/blog/b/5-myths-about-networking",
+    "response": "200|https://theoper8tor.com/blog/b/5-myths-about-networking",
+    "file": "docs/source/blog__b__5-myths-about-networking.html"
+  }
+]

@@ -1,0 +1,19 @@
+title: Main menu
+items:
+  - label: Home
+    to: /
+  - label: Speaker
+    to: /speaker
+  - label: Services
+    to: /services
+  - label: Book Online
+    to: /book-online
+  - label: Contact
+    to: /contact
+  - label: Shop
+    to: /shop
+action:
+  label: Connect
+  to: /contact
+openLabel: Menu
+closeLabel: Close

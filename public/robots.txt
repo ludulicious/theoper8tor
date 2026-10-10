@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://theoper8tor.com/sitemap.xml

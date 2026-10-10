@@ -1,0 +1,278 @@
+[
+  {
+    "path": "/",
+    "source": "https://theoper8tor.com/",
+    "response": "200|https://theoper8tor.com/",
+    "file": "docs/source/index.html"
+  },
+  {
+    "path": "/speaker",
+    "source": "https://theoper8tor.com/speaker",
+    "response": "200|https://theoper8tor.com/speaker",
+    "file": "docs/source/speaker.html"
+  },
+  {
+    "path": "/home",
+    "source": "https://theoper8tor.com/home",
+    "response": "200|https://theoper8tor.com/home",
+    "file": "docs/source/home.html"
+  },
+  {
+    "path": "/services",
+    "source": "https://theoper8tor.com/services",
+    "response": "200|https://theoper8tor.com/services",
+    "file": "docs/source/services.html"
+  },
+  {
+    "path": "/book-online",
+    "source": "https://theoper8tor.com/book-online",
+    "response": "200|https://theoper8tor.com/book-online",
+    "file": "docs/source/book-online.html"
+  },
+  {
+    "path": "/contact",
+    "source": "https://theoper8tor.com/contact",
+    "response": "200|https://theoper8tor.com/contact",
+    "file": "docs/source/contact.html"
+  },
+  {
+    "path": "/shop",
+    "source": "https://theoper8tor.com/shop",
+    "response": "200|https://theoper8tor.com/shop",
+    "file": "docs/source/shop.html"
+  },
+  {
+    "path": "/readytoscale",
+    "source": "https://theoper8tor.com/readytoscale",
+    "response": "200|https://theoper8tor.com/readytoscale",
+    "file": "docs/source/readytoscale.html"
+  },
+  {
+    "path": "/schedule",
+    "source": "https://theoper8tor.com/schedule",
+    "response": "200|https://theoper8tor.com/schedule",
+    "file": "docs/source/schedule.html"
+  },
+  {
+    "path": "/fastaction",
+    "source": "https://theoper8tor.com/fastaction",
+    "response": "200|https://theoper8tor.com/fastaction",
+    "file": "docs/source/fastaction.html"
+  },
+  {
+    "path": "/bbb",
+    "source": "https://theoper8tor.com/bbb",
+    "response": "200|https://theoper8tor.com/bbb",
+    "file": "docs/source/bbb.html"
+  },
+  {
+    "path": "/expertcoffeechat",
+    "source": "https://theoper8tor.com/expertcoffeechat",
+    "response": "200|https://theoper8tor.com/expertcoffeechat",
+    "file": "docs/source/expertcoffeechat.html"
+  },
+  {
+    "path": "/initial-consultation",
+    "source": "https://theoper8tor.com/initial-consultation",
+    "response": "200|https://theoper8tor.com/initial-consultation",
+    "file": "docs/source/initial-consultation.html"
+  },
+  {
+    "path": "/client-relations-retention",
+    "source": "https://theoper8tor.com/client-relations-retention",
+    "response": "200|https://theoper8tor.com/client-relations-retention",
+    "file": "docs/source/client-relations-retention.html"
+  },
+  {
+    "path": "/systems-audit",
+    "source": "https://theoper8tor.com/systems-audit",
+    "response": "200|https://theoper8tor.com/systems-audit",
+    "file": "docs/source/systems-audit.html"
+  },
+  {
+    "path": "/cdn-cgi/l/email-protection",
+    "source": "https://theoper8tor.com/cdn-cgi/l/email-protection",
+    "response": "404|https://theoper8tor.com/cdn-cgi/l/email-protection",
+    "file": "docs/source/cdn-cgi__l__email-protection.html"
+  },
+  {
+    "path": "/bookingpagevision",
+    "source": "https://theoper8tor.com/bookingpagevision",
+    "response": "200|https://theoper8tor.com/bookingpagevision",
+    "file": "docs/source/bookingpagevision.html"
+  },
+  {
+    "path": "/bookingpagevocal",
+    "source": "https://theoper8tor.com/bookingpagevocal",
+    "response": "200|https://theoper8tor.com/bookingpagevocal",
+    "file": "docs/source/bookingpagevocal.html"
+  },
+  {
+    "path": "/bookingpagevisible",
+    "source": "https://theoper8tor.com/bookingpagevisible",
+    "response": "200|https://theoper8tor.com/bookingpagevisible",
+    "file": "docs/source/bookingpagevisible.html"
+  },
+  {
+    "path": "/theoper8tor.com",
+    "source": "https://theoper8tor.com/theoper8tor.com",
+    "response": "404|https://theoper8tor.com/theoper8tor.com",
+    "file": "docs/source/theoper8tor.com.html"
+  },
+  {
+    "path": "/connect",
+    "source": "https://theoper8tor.com/connect",
+    "response": "200|https://theoper8tor.com/connect",
+    "file": "docs/source/connect.html"
+  },
+  {
+    "path": "/owwll.com",
+    "source": "https://theoper8tor.com/owwll.com",
+    "response": "404|https://theoper8tor.com/owwll.com",
+    "file": "docs/source/owwll.com.html"
+  },
+  {
+    "path": "/instagram.com/theoper8tor",
+    "source": "https://theoper8tor.com/instagram.com/theoper8tor",
+    "response": "404|https://theoper8tor.com/instagram.com/theoper8tor",
+    "file": "docs/source/instagram.com__theoper8tor.html"
+  },
+  {
+    "path": "/facebook.com/theoper8tor",
+    "source": "https://theoper8tor.com/facebook.com/theoper8tor",
+    "response": "404|https://theoper8tor.com/facebook.com/theoper8tor",
+    "file": "docs/source/facebook.com__theoper8tor.html"
+  },
+  {
+    "path": "/twitter.com/theoper8tor",
+    "source": "https://theoper8tor.com/twitter.com/theoper8tor",
+    "response": "404|https://theoper8tor.com/twitter.com/theoper8tor",
+    "file": "docs/source/twitter.com__theoper8tor.html"
+  },
+  {
+    "path": "/youtube.com/theoper8tor",
+    "source": "https://theoper8tor.com/youtube.com/theoper8tor",
+    "response": "404|https://theoper8tor.com/youtube.com/theoper8tor",
+    "file": "docs/source/youtube.com__theoper8tor.html"
+  },
+  {
+    "path": "/linkedin.com/in/theoper8tor",
+    "source": "https://theoper8tor.com/linkedin.com/in/theoper8tor",
+    "response": "404|https://theoper8tor.com/linkedin.com/in/theoper8tor",
+    "file": "docs/source/linkedin.com__in__theoper8tor.html"
+  },
+  {
+    "path": "/theoper8tor.com/contact",
+    "source": "https://theoper8tor.com/theoper8tor.com/contact",
+    "response": "404|https://theoper8tor.com/theoper8tor.com/contact",
+    "file": "docs/source/theoper8tor.com__contact.html"
+  },
+  {
+    "path": "/caregiverscollection",
+    "source": "https://theoper8tor.com/caregiverscollection",
+    "response": "200|https://anabsolutewonder.skillplate.com/the-caregivers-collection?id=69912eeab8a711218ab002a1",
+    "file": "docs/source/caregiverscollection.html"
+  },
+  {
+    "path": "/icvoffers",
+    "source": "https://theoper8tor.com/icvoffers",
+    "response": "200|https://connecticv.com/drstaci",
+    "file": "docs/source/icvoffers.html"
+  },
+  {
+    "path": "/gmbauditsp2pplanner",
+    "source": "https://theoper8tor.com/gmbauditsp2pplanner",
+    "response": "404|https://theoper8tor.com/gmbauditsp2pplanner",
+    "file": "docs/source/gmbauditsp2pplanner.html"
+  },
+  {
+    "path": "/speakerbundle",
+    "source": "https://theoper8tor.com/speakerbundle",
+    "response": "200|https://anabsolutewonder.gumroad.com/l/speakerbundle",
+    "file": "docs/source/speakerbundle.html"
+  },
+  {
+    "path": "/p2pplanner",
+    "source": "https://theoper8tor.com/p2pplanner",
+    "response": "200|https://theoper8tor.com/p2pplanner",
+    "file": "docs/source/p2pplanner.html"
+  },
+  {
+    "path": "/aicompanion",
+    "source": "https://theoper8tor.com/aicompanion",
+    "response": "200|https://theoper8tor.com/aicompanion",
+    "file": "docs/source/aicompanion.html"
+  },
+  {
+    "path": "/eoyoffercheckout",
+    "source": "https://theoper8tor.com/eoyoffercheckout",
+    "response": "404|https://theoper8tor.com/eoyoffercheckout",
+    "file": "docs/source/eoyoffercheckout.html"
+  },
+  {
+    "path": "/coffeechat",
+    "source": "https://theoper8tor.com/coffeechat",
+    "response": "200|https://theoper8tor.com/intentionalcoffeechat",
+    "file": "docs/source/coffeechat.html"
+  },
+  {
+    "path": "/thecaringcorner",
+    "source": "https://theoper8tor.com/thecaringcorner",
+    "response": "404|https://theoper8tor.com/thecaringcorner",
+    "file": "docs/source/thecaringcorner.html"
+  },
+  {
+    "path": "/healthhunters",
+    "source": "https://theoper8tor.com/healthhunters",
+    "response": "200|https://riordanclinic.org/2024/03/the-complex-web-of-senior-dementia-care-gen-x-style/?fbclid=IwAR1LpT8KBotJF-DSvL6MscSIO0oewX1HPhOI2Z4fv_OoW9Zi51S5qEhVQhQ_aem_Acv4OiBK9loVqUvjsIUZneZ3zcFX4LBa-f9hgHr7Caa9qjzYVEbjIOqBmMpAa7H9f2l8AiWlcI7Ax0czzzCXRQrr",
+    "file": "docs/source/healthhunters.html"
+  },
+  {
+    "path": "/cashflowcurrency.com/90day",
+    "source": "https://theoper8tor.com/cashflowcurrency.com/90day",
+    "response": "404|https://theoper8tor.com/cashflowcurrency.com/90day",
+    "file": "docs/source/cashflowcurrency.com__90day.html"
+  },
+  {
+    "path": "/https/facebook.com/drstacimoore",
+    "source": "https://theoper8tor.com/https/facebook.com/drstacimoore",
+    "response": "404|https://theoper8tor.com/https/facebook.com/drstacimoore",
+    "file": "docs/source/https__facebook.com__drstacimoore.html"
+  },
+  {
+    "path": "/the-caregivers-collection",
+    "source": "https://theoper8tor.com/the-caregivers-collection",
+    "response": "404|https://theoper8tor.com/the-caregivers-collection",
+    "file": "docs/source/the-caregivers-collection.html"
+  },
+  {
+    "path": "/caregiver-s-coming-community",
+    "source": "https://theoper8tor.com/caregiver-s-coming-community",
+    "response": "404|https://theoper8tor.com/caregiver-s-coming-community",
+    "file": "docs/source/caregiver-s-coming-community.html"
+  },
+  {
+    "path": "/pages/legal/terms",
+    "source": "https://theoper8tor.com/pages/legal/terms",
+    "response": "404|https://theoper8tor.com/pages/legal/terms",
+    "file": "docs/source/pages__legal__terms.html"
+  },
+  {
+    "path": "/pages/legal/privacy",
+    "source": "https://theoper8tor.com/pages/legal/privacy",
+    "response": "404|https://theoper8tor.com/pages/legal/privacy",
+    "file": "docs/source/pages__legal__privacy.html"
+  },
+  {
+    "path": "/theoper8tor.com/connect",
+    "source": "https://theoper8tor.com/theoper8tor.com/connect",
+    "response": "404|https://theoper8tor.com/theoper8tor.com/connect",
+    "file": "docs/source/theoper8tor.com__connect.html"
+  },
+  {
+    "path": "/anabsolutewonder.com",
+    "source": "https://theoper8tor.com/anabsolutewonder.com",
+    "response": "404|https://theoper8tor.com/anabsolutewonder.com",
+    "file": "docs/source/anabsolutewonder.com.html"
+  }
+]

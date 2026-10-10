@@ -1,0 +1,15 @@
+title: Photos
+icon: i-lucide-images
+studio:
+  filters:
+    - field: categories
+      label: Category
+    - field: visible
+      label: Visibility
+  view: media
+  media:
+    directory: images
+    formats: [jpg, jpeg, png, webp, gif]
+    maxBytes: 10485760
+    imageAspectRatio: null
+    thumbnailAspectRatio: "4:3"

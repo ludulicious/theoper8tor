@@ -1,0 +1,33 @@
+title: Site settings
+name: The Oper8tor
+url: https://theoper8tor.com
+logo:
+  src: /images/41b657dea49b.jpeg
+  alt: The Oper8tor
+phone: 773.430.7337
+phoneLink: "+17734307337"
+email: sim@theoper8tor.com
+copyright: © 2022 All Rights Reserved AAW dba TheOper8tor
+skipLink: Skip to content
+readMore: Read more
+backLabel: Back to the blog
+footerLinks:
+  - label: Services
+    to: /services
+  - label: Book Online
+    to: /book-online
+  - label: Contact
+    to: /contact
+  - label: Blog
+    to: /blog
+  - label: Affiliate Disclaimer
+    to: /affiliate
+  - label: Donate to F.L.O.U.R.I.S.H.
+    to: https://www.facebook.com/flourishwomensinititative
+socialLinks:
+  - label: Facebook
+    to: https://facebook.com/theoper8tor
+  - label: LinkedIn
+    to: https://linkedin.com/in/theoper8tor
+  - label: YouTube
+    to: https://youtube.com/theoper8tor

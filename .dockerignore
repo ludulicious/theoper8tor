@@ -1,0 +1,17 @@
+.git
+node_modules
+.pnpm-store
+.nuxt
+.output
+.data
+dist
+.env*
+*.log
+.DS_Store
+.vscode
+.idea
+.cursor
+.hallmark
+.openai
+Dockerfile
+.dockerignore

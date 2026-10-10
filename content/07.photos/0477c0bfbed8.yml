@@ -1,0 +1,8 @@
+{
+  "title": "Image",
+  "visible": true,
+  "order": 54,
+  "image": { "src": "/images/0477c0bfbed8.jpg", "alt": "Image" },
+  "categories": ["Original website"],
+  "credit": "The Oper8tor \u2014 https://images.unsplash.com/photo-1589948516895-db76617cb753?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb",
+}
