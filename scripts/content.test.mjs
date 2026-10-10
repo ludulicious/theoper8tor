@@ -18,7 +18,7 @@ test("all pages have unique public addresses and required copy", () => {
     assert.ok(page.data.title?.trim(), page.file);
     assert.ok(page.data.description?.trim(), page.file);
     assert.ok(
-      page.collection === "content" ||
+      ["content", "offers", "blogIndex", "blog"].includes(page.collection) ||
         page.data.studio?.blocks.some((block) => page.data[block.field]?.title),
       page.file,
     );
@@ -134,7 +134,7 @@ test("consultations have complete scopes and valid provider booking destinations
     const booking = new URL(offer.data.bookingUrl);
     assert.equal(booking.protocol, "https:");
     assert.equal(booking.hostname, "link.funnelstreams.com");
-    for (const field of ["duration", "bestFor", "summary"])
+    for (const field of ["duration", "bestFor", "description"])
       assert.ok(offer.data[field]?.trim(), `${offer.file}: ${field}`);
     assert.doesNotMatch(
       offer.body,
@@ -162,7 +162,8 @@ test("consultations have complete scopes and valid provider booking destinations
 // These checks cover the editing contract: every section tab must own its copy and fields.
 test("Studio sections have unique slots, editable fields and valid media and actions", () => {
   for (const page of pages) {
-    if (page.collection === "content") continue;
+    if (["content", "offers", "blogIndex", "blog"].includes(page.collection))
+      continue;
     const blocks = page.data.studio?.blocks;
     assert.ok(blocks?.length, page.file);
     assert.equal(
@@ -305,5 +306,26 @@ test("Studio media pickers have configured image and video libraries", () => {
       ),
       `${collection}: library items`,
     );
+  }
+});
+
+test("offers have plain Markdown stories and one source for their summaries", () => {
+  for (const offer of pages.filter((page) => page.collection === "offers")) {
+    assert.equal(offer.data.studio, undefined, offer.file);
+    assert.equal(offer.data.summary, undefined, offer.file);
+    assert.ok(offer.body.trim(), offer.file);
+    assert.doesNotMatch(offer.body, /^:{2,}|^#[a-z]|^# /m, offer.file);
+    if (offer.data.youtubeId)
+      assert.match(offer.data.youtubeId, /^[A-Za-z0-9_-]{11}$/);
+  }
+});
+
+test("blog stories use ordinary Markdown without section tabs or duplicate titles", () => {
+  for (const page of pages.filter((page) =>
+    ["blogIndex", "blog"].includes(page.collection),
+  )) {
+    assert.equal(page.data.studio, undefined, page.file);
+    assert.doesNotMatch(page.body, /^:{2,}|^#[a-z]|^# /m, page.file);
+    if (page.collection === "blog") assert.ok(page.body.trim(), page.file);
   }
 });

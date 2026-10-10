@@ -4,7 +4,13 @@ const { data: item } = await useAsyncData(
   () => `video:${props.video}`,
   () =>
     queryCollection("videos")
-      .where("stem", "=", `09.videos/${props.video}`)
+      .where(
+        /^[A-Za-z0-9_-]{11}$/.test(props.video) ? "youtubeId" : "stem",
+        "=",
+        /^[A-Za-z0-9_-]{11}$/.test(props.video)
+          ? props.video
+          : `09.videos/${props.video}`,
+      )
       .where("visible", "=", true)
       .first(),
 );

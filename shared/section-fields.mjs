@@ -1,22 +1,5 @@
-// Supporting-page section fields. Main pages use ordinary Markdown and shared Details.
+// Supporting-page section fields. Main pages, offers and blog use ordinary Markdown.
 export const sectionFields = {
-  offers: [
-    "startWithWhatIsOnYourMind",
-    "whatWeWillCover",
-    "workThroughOnePriority",
-    "whatIsIncluded",
-    "isThisTheRightSession",
-    "lookAtTheExperienceFromTheClients",
-    "whatWeWillReview",
-    "giveYourIdeasSomewhereToGo",
-    "whatWeWillWorkThrough",
-    "findTheGapsInHowYourBusiness",
-    "seeHowTheWholeJourneyConnects",
-    "planningBeforeBuilding",
-    "readyToScaleThroughAffiliateMarketing",
-    "whatTheProgrammeCovers",
-    "exploreTheOptions",
-  ],
   booking: [
     "photograph",
     "scheduleAVirtualCoffeeWTheopert8tor",
@@ -71,19 +54,5 @@ export const sectionFields = {
     "whatsIncludedInThePlanner",
     "yourVisionaryStrategist",
     "bookAnAiStrategyConversation",
-  ],
-  blogIndex: ["officialBlog"],
-  blog: [
-    "whatIsImposterSyndrome",
-    "googleAccountPurge",
-    "isEntrepreneurshipThePathForYou",
-    "doYouAspireToBecomeAnEntrepreneur",
-    "networkingDebunking5MythsAboutNetworking",
-    "buildingBridgesDispellingMisconceptionsToUnlockSuccess",
-    "myth1NetworkingIsOnlyAboutCollecting",
-    "myth2NetworkingIsOnlyForExtroverts",
-    "myth3NetworkingIsSolelyAboutSelfpromotion",
-    "myth4NetworkingEventsAreTheOnly",
-    "myth5NetworkingIsSolelyFocusedOn",
   ],
 };

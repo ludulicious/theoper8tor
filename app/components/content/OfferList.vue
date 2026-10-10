@@ -33,7 +33,7 @@ const money = (price?: number) =>
         <p class="session-price">{{ money(offer.price) }} <span>USD</span></p>
         <p class="session-duration">{{ offer.duration }}</p>
       </div>
-      <p class="pricing-card-summary">{{ offer.summary }}</p>
+      <p class="pricing-card-summary">{{ offer.description }}</p>
       <NuxtLink :to="offer.path" class="pricing-card-action">
         View session <span aria-hidden="true">→</span>
         <span class="sr-only">: {{ offer.title }}</span>

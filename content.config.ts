@@ -130,15 +130,19 @@ export default defineContentConfig({
     offers: defineCollection({
       type: "page",
       source: pageSources.offers,
-      schema: page.extend({
-        ...sectionsFor("offers"),
+      schema: page.omit({ studio: true }).extend({
+        breadcrumbs: page.shape.breadcrumbs.editor({ hidden: true }),
         layout: story,
         kind: z.enum(["consultation", "programme"]).default("programme"),
         price: z.number().positive().optional(),
         duration: z.string().optional(),
         bestFor: z.string().optional(),
-        summary: z.string().optional(),
-        bookingUrl: z.string().url().optional(),
+        bookingUrl: z.string().optional(),
+        bookingLabel: z.string().optional(),
+        youtubeId: z
+          .string()
+          .regex(/^[A-Za-z0-9_-]{11}$/)
+          .optional(),
         featured: z.boolean().default(false),
         order: z.number().nonnegative().default(0),
       }),
@@ -156,16 +160,14 @@ export default defineContentConfig({
     blogIndex: defineCollection({
       type: "page",
       source: pageSources.blogIndex,
-      schema: page.extend({
-        ...sectionsFor("blogIndex"),
+      schema: page.omit({ studio: true }).extend({
         layout: z.literal("blog").default("blog").editor({ hidden: true }),
       }),
     }),
     blog: defineCollection({
       type: "page",
       source: pageSources.blog,
-      schema: page.extend({
-        ...sectionsFor("blog"),
+      schema: page.omit({ studio: true }).extend({
         layout: z
           .literal("article")
           .default("article")

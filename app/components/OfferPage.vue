@@ -4,7 +4,6 @@ const { data: offer } = await useAsyncData(
   () => `offer:${props.path}`,
   () => queryCollection("offers").path(props.path).first(),
 );
-provide("sectionPage", offer);
 provide("contentImageSizes", ref("100vw 375:90vw 640:92vw 788:740px"));
 const price = computed(() =>
   offer.value?.price === undefined
@@ -22,22 +21,32 @@ const price = computed(() =>
       <div>
         <p class="eyebrow">{{ offer.bestFor }}</p>
         <h1>{{ offer.title }}</h1>
-        <p class="lead">{{ offer.summary }}</p>
-        <p class="session-duration">{{ offer.duration }}</p>
+        <p class="lead">{{ offer.description }}</p>
+        <p v-if="offer.duration" class="session-duration">
+          {{ offer.duration }}
+        </p>
       </div>
       <aside class="booking-summary" aria-label="Session booking">
         <p class="eyebrow">Your session with Staci</p>
-        <p class="session-price">{{ price }} <span>USD</span></p>
-        <p>One focused conversation. A clear place to start.</p>
-        <a v-if="offer.bookingUrl" class="action-link" :href="offer.bookingUrl"
-          >Book this session</a
+        <p v-if="price" class="session-price">{{ price }} <span>USD</span></p>
+        <p v-if="offer.kind === 'consultation'">
+          One focused conversation. A clear place to start.
+        </p>
+        <a
+          v-if="offer.bookingUrl"
+          class="action-link"
+          :href="offer.bookingUrl"
+          >{{ offer.bookingLabel || "Book this session" }}</a
         >
-        <p class="booking-note">
+        <p v-if="offer.kind === 'consultation'" class="booking-note">
           Choose an available time on the booking page.
         </p>
       </aside>
     </section>
-    <div class="offer-body"><ContentRenderer :value="offer" /></div>
+    <div class="offer-body">
+      <ContentRenderer :value="offer" />
+      <VideoPlayer v-if="offer.youtubeId" :video="offer.youtubeId" />
+    </div>
     <div class="offer-back">
       <NuxtLink to="/book-a-session" class="text-link"
         >← Compare all sessions</NuxtLink

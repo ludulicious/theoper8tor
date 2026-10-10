@@ -51,11 +51,15 @@ for (const file of readdirSync(`${root}/content/09.videos`).filter(
   (file) => file.endsWith(".yml") && !file.startsWith("."),
 )) {
   const slug = file.replace(/\.yml$/, "");
+  const video = parse(
+    readFileSync(`${root}/content/09.videos/${file}`, "utf8"),
+  );
   preview[`content/09.videos/${file}`] = [
     "/videos",
     ...pages
       .filter(
         (page) =>
+          page.data.youtubeId === video.youtubeId ||
           page.body.includes(`video="${slug}"`) ||
           JSON.stringify(page.data).includes(`"video":"${slug}"`),
       )

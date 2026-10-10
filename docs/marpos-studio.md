@@ -30,9 +30,19 @@ Home and Book a session also have a **Sessions** tab for the comparison heading,
 
 The short page name is developer-owned `pageName` metadata. Studio uses it to identify pages without tying the page list to the website headline. Search titles and descriptions are preserved separately and hidden from routine editing.
 
+## Offers
+
+All seven offers have only **Story** and **Details**. Story is ordinary Markdown: headings, paragraphs, lists, links and images can be edited visually. There are no component wrappers or per-heading tabs.
+
+Details holds Title, Description, Price, Duration, Best For, Booking URL, Featured and Order, plus optional SEO and programme video settings. Description is the shared summary shown on both the pricing card and offer page; it does not need to be maintained twice. The programme has its enquiry link instead of a consultation price. Booking Label can override the default button text. The Ready to Scale video remains connected to the Videos library.
+
+## Blog
+
+The blog overview and every article have only **Story** and **Details**. Story is regular Markdown without component wrappers or heading tabs. Details holds the title and description, plus the article image, author and date. The website supplies the article heading, metadata and main image automatically. Additional photographs can be inserted directly into the story.
+
 ## Supporting pages
 
-Individual offers, calendars, information and blog pages retain their existing named section tabs. Their text and settings are edited in those sections; their Details fields include relevant prices, durations, provider links or article metadata. `PageSections.vue` renders these supporting pages. Main pages use `MainPage.vue` and ordinary Markdown instead.
+Calendars and information pages retain their existing named section tabs. Their text and settings are edited in those sections; their Details fields include relevant provider links. `PageSections.vue` renders these supporting pages.
 
 ## New content and ordering
 
@@ -78,12 +88,12 @@ Home and Book a Session use the same offer data. Services explains the areas of 
 - **Price:** a number in USD, without a currency symbol or comma. The site formats it consistently.
 - **Duration:** the session length and any included follow-up time.
 - **Best For:** the visitor's need, shown above the session name.
-- **Summary:** a short explanation of the session's focus.
+- **Description:** a short explanation of the session's focus.
 - **Booking URL:** the existing provider's booking address for that session.
 - **Featured:** shows the session among the homepage starting points.
 - **Order:** smaller numbers appear first.
 
-The consultation detail layout supplies the title, summary, duration, price and booking button. Its named sections explain scope and deliverables without repeating prices or adding another booking button. Programme pages use the same section editor. `sales` selects the shared sales styling and is hidden from ordinary editing.
+The offer layout supplies the title, description, duration, price and booking button. Its regular Markdown story explains scope and deliverables without repeating prices or adding another booking button. Programme pages use the same Story and Details editor. `sales` selects the shared sales styling and is hidden from ordinary editing.
 
 The main menu sends visitors to How I can help (Services), Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources uses `/resources`; old `/shop` links redirect to it. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.
 

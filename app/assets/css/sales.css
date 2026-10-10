@@ -541,3 +541,12 @@
   max-height: 560px;
   object-fit: contain;
 }
+
+.article-image {
+  width: 100%;
+  height: auto;
+  margin-block: 1.5rem 2rem;
+}
+.article-meta {
+  color: var(--color-muted);
+}
