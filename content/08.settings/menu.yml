@@ -1,7 +1,7 @@
 title: Main menu
 items:
   - label: How I can help
-    to: /services
+    to: /how-can-help
   - label: Meet Staci
     to: /meet-staci
   - label: Speaking

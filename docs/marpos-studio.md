@@ -14,7 +14,7 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 | ----------- | ------------------------------------------------- | ---------------------------------------------------------------------- |
 | Home        | `content/00.index.md`                             | Homepage sections and calls to action                                     |
 | Speaker     | `content/01.speaking.md`                           | Speaking, interviewing and training                                    |
-| Services    | `content/02.services/00.index.md`                 | Services overview                                                      |
+| Services    | `content/02.how-can-help.md`                 | Services overview                                                      |
 | Offers      | `content/02.services/*.md` excluding the overview | Consultations and programmes                                           |
 | Booking     | `content/03.booking/`                             | Booking list and calendar pages                                        |
 | Contact     | `content/04.contact.md`                           | Contact introduction and form                                          |
@@ -96,7 +96,7 @@ Website images render through `NuxtImg` with responsive source sets and 1×/2× 
 
 ## Route structure
 
-- How I can help: `/services`; individual offers: `/book-a-session/[slug]`.
+- How I can help: `/how-can-help`; individual offers: `/book-a-session/[slug]`.
 - Meet Staci: `/meet-staci`; Speaking: `/speaking`; Contact: `/contact`.
 - Book a session: `/book-a-session`; coffee calendars and programme calendars sit beneath it.
 - Resources: `/resources`; planner and AI support pages sit beneath it.

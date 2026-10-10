@@ -41,5 +41,6 @@
   "/services/initial-consultation": "/book-a-session/initial-consultation",
   "/services/client-relations-retention": "/book-a-session/client-relations-retention",
   "/services/fast-action": "/book-a-session/fast-action",
-  "/services/systems-audit": "/book-a-session/systems-audit"
+  "/services/systems-audit": "/book-a-session/systems-audit",
+  "/services": "/how-can-help"
 }

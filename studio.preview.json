@@ -3,7 +3,7 @@
   "content/08.settings/menu.yml": "/",
   "content/00.index.md": "/",
   "content/01.speaking.md": "/speaking",
-  "content/02.services/00.index.md": "/services",
+  "content/02.how-can-help.md": "/how-can-help",
   "content/02.services/01.initial-consultation.md": "/book-a-session/initial-consultation",
   "content/02.services/02.fast-action.md": "/book-a-session/fast-action",
   "content/02.services/03.client-relations-retention.md": "/book-a-session/client-relations-retention",
@@ -166,7 +166,7 @@
     "/resources/passion-to-profit-planner"
   ],
   "content/07.photos/eac6725b744f.yml": [
-    "/services"
+    "/how-can-help"
   ],
   "content/07.photos/ef3f1cc464cd.yml": "/",
   "content/07.photos/f2d8939b0807.yml": "/",

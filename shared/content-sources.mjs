@@ -2,10 +2,9 @@
 export const pageSources = {
   home: { include: "00.index.md", prefix: "/" },
   speaker: { include: "01.speaking.md", prefix: "/" },
-  services: { include: "02.services/00.index.md", prefix: "/" },
+  services: { include: "02.how-can-help.md", prefix: "/" },
   offers: {
     include: "02.services/*.md",
-    exclude: ["02.services/00.index.md"],
     prefix: "/book-a-session",
   },
   booking: { include: "03.booking/**/*.md", prefix: "/book-a-session" },

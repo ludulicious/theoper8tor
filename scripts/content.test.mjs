@@ -33,8 +33,8 @@ test("ordering numbers do not change page addresses; new pages inherit collectio
     "/blog/new-article",
   );
   assert.equal(
-    pagePath("02.services/00.index.md", pageSources.services),
-    "/services",
+    pagePath("02.how-can-help.md", pageSources.services),
+    "/how-can-help",
   );
 });
 test("all content links and image files resolve within the migrated project", () => {
@@ -219,7 +219,7 @@ test("menu routes match their labels and content links use canonical routes", ()
     readFileSync(`${root}/content/08.settings/menu.yml`, "utf8"),
   );
   const expected = {
-    "How I can help": "/services",
+    "How I can help": "/how-can-help",
     "Meet Staci": "/meet-staci",
     Speaking: "/speaking",
     Contact: "/contact",
