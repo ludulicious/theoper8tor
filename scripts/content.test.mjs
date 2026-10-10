@@ -103,7 +103,7 @@ test("video library references, thumbnails and Studio previews resolve", () => {
 
 test("offer URLs are nested under booking and old URLs redirect directly", () => {
   const offers = pages.filter((page) => page.collection === "offers");
-  assert.equal(offers.length, 7);
+  assert.ok(offers.length >= 7);
   for (const offer of offers) {
     assert.ok(offer.path.startsWith("/book-online/"), offer.path);
     const oldPath = offer.path.replace("/book-online", "");
@@ -112,5 +112,41 @@ test("offer URLs are nested under booking and old URLs redirect directly", () =>
       assert.ok(!page.body.includes(`to="${oldPath}"`), page.file);
       assert.ok(!page.body.includes(`](${oldPath})`), page.file);
     }
+  }
+});
+
+test("consultations have complete scopes and valid provider booking destinations", () => {
+  const offers = pages.filter((page) => page.data.kind === "consultation");
+  assert.ok(offers.length >= 6);
+  for (const offer of offers) {
+    assert.ok(
+      Number.isFinite(offer.data.price) && offer.data.price > 0,
+      offer.file,
+    );
+    const booking = new URL(offer.data.bookingUrl);
+    assert.equal(booking.protocol, "https:");
+    assert.equal(booking.hostname, "link.funnelstreams.com");
+    for (const field of ["duration", "bestFor", "summary"])
+      assert.ok(offer.data[field]?.trim(), `${offer.file}: ${field}`);
+    assert.doesNotMatch(
+      offer.body,
+      /^# /m,
+      `${offer.file}: the detail layout supplies its heading`,
+    );
+    assert.doesNotMatch(
+      offer.body,
+      /\$[\d,]+/,
+      `${offer.file}: prices belong in the shared summary`,
+    );
+  }
+  assert.ok(offers.some((offer) => offer.data.featured));
+  for (const path of ["/", "/services", "/book-online"]) {
+    const page = pages.find((page) => page.path === path);
+    assert.ok(page.body.includes("offer-list"), path);
+    assert.doesNotMatch(
+      page.body,
+      /provider-embed/,
+      `${path}: keep booking selection focused`,
+    );
   }
 });

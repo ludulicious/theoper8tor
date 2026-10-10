@@ -1,0 +1,7 @@
+/* Additional tokens for the established Oper8tor design system. */
+:root {
+  --color-paper: #f5f0e6;
+  --color-paper-muted: #c8c2b7;
+  --space-section: clamp(3rem, 7vw, 6rem);
+  --width-sales: 1100px;
+}

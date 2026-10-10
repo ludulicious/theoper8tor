@@ -1,21 +1,15 @@
 title: Main menu
 items:
-  - label: Home
-    to: /
-  - label: Speaker
-    to: /speaker
   - label: Services
     to: /services
-  - label: Book Online
-    to: /book-online
+  - label: Meet Staci
+    to: /about
+  - label: Speaking
+    to: /speaker
   - label: Contact
     to: /contact
-  - label: Videos
-    to: /videos
-  - label: Shop
-    to: /shop
 action:
-  label: Connect
-  to: /contact
+  label: Book a session
+  to: /book-online
 openLabel: Menu
 closeLabel: Close

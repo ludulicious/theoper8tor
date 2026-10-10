@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-10",
+  "framework": "Nuxt 4 / Vue / Nuxt Content",
+  "fonts": ["Oswald", "Open Sans"],
+  "palette": "existing black, gold, ivory",
+  "motion": "cut",
+  "preserve": ["logos", "palette", "fonts", "routes", "providers"],
+  "scope": "sales content and layout"
+}

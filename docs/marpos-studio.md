@@ -22,7 +22,7 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 | Blog Index  | `content/06.blog/00.index.md`                     | Blog introduction                                                      |
 | Blog        | `content/06.blog/` excluding the overview         | Articles, automatically listed on Blog                                 |
 | Photos      | `content/07.photos/`                              | Image library                                                          |
-| Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility              |
+| Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility             |
 | Menu / Site | `content/08.settings/`                            | Navigation, logo, contact details and footer                           |
 
 Each page has Title, Description and optional SEO Title. Optional Breadcrumbs let you set an ordered trail of labels and links; leave the final item without a link. If omitted, the page uses Home and its title; offers include Book Now between them. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap. Header Logo and Footer Logo select separate transparent vector wordmarks suited to the dark header and footer, with gold lettering and ivory accents. The original Logo stays available for social sharing and as a fallback.
@@ -73,3 +73,22 @@ The original Uncle Nearest video is unavailable on YouTube. Its entry and ID are
 Before launch, read `docs/migration.md` for the original site's conflicting prices, historical events, unrelated About template and missing external destinations. Publishing in Studio edits GitHub content; configure hosting to rebuild and publish the generated result afterward.
 
 Offer pages use `/book-online/[offer]`, including `/book-online/initial-consultation` and `/book-online/fastaction`. The previous root URLs redirect permanently to their new addresses. Studio previews and the sitemap use the nested URLs.
+
+## Consultation summaries and the sales journey
+
+Home, Services and Book a Session use the same offer data. Edit a consultation once in **Offers** to update its listing everywhere:
+
+- **Kind:** `consultation` includes it in session lists; `programme` keeps it separate.
+- **Price:** a number in USD, without a currency symbol or comma. The site formats it consistently.
+- **Duration:** the session length and any included follow-up time.
+- **Best For:** the visitor's need, shown above the session name.
+- **Summary:** a short explanation of the session's focus.
+- **Booking URL:** the existing provider's booking address for that session.
+- **Featured:** shows the session among the homepage starting points.
+- **Order:** smaller numbers appear first.
+
+The consultation detail layout supplies the title, summary, duration, price and booking button. Its story body should start with level-two headings, and explain scope and deliverables without repeating prices or adding another booking button. Programme pages retain their ordinary story layout. `sales` selects the shared sales styling and is hidden from ordinary editing.
+
+`::offer-list` inserts all consultations. `::offer-list{featured="true"}` inserts only featured consultations. `::story-hero{image="/images/86cafeac5a88.webp" alt="Staci Moore" eyebrow="Meet The Oper8tor"}` places editable Markdown beside a photograph. As with other components, preserve the closing colon fence.
+
+The main menu sends visitors to Services, Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources retains `/shop` so existing links work. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.

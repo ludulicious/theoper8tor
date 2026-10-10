@@ -52,6 +52,7 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         'home-page': path === '/',
         'article-page': page.layout === 'article',
         'booking-page': path === '/book-online',
+        'sales-page': page.sales,
       },
     ]"
   >
@@ -70,7 +71,15 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         >
       </template>
     </nav>
-    <ContentRenderer :value="page" class="page-story" />
+    <OfferPage
+      v-if="
+        collection === 'offers' &&
+        'kind' in page &&
+        page.kind === 'consultation'
+      "
+      :path="path"
+    />
+    <ContentRenderer v-else :value="page" class="page-story" />
     <div v-if="page.layout === 'blog'" class="blog-grid">
       <article v-for="post in posts" :key="post.path">
         <NuxtLink :to="post.path"

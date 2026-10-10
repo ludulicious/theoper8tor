@@ -9,6 +9,7 @@ const page = z.object({
   title: z.string().min(1),
   description: z.string(),
   seoTitle: z.string().optional(),
+  sales: z.boolean().default(false).editor({ hidden: true }),
   breadcrumbs: z
     .array(
       z.object({
@@ -39,7 +40,17 @@ export default defineContentConfig({
     offers: defineCollection({
       type: "page",
       source: pageSources.offers,
-      schema: page.extend({ layout: story }),
+      schema: page.extend({
+        layout: story,
+        kind: z.enum(["consultation", "programme"]).default("programme"),
+        price: z.number().positive().optional(),
+        duration: z.string().optional(),
+        bestFor: z.string().optional(),
+        summary: z.string().optional(),
+        bookingUrl: z.string().url().optional(),
+        featured: z.boolean().default(false),
+        order: z.number().nonnegative().default(0),
+      }),
     }),
     booking: defineCollection({
       type: "page",

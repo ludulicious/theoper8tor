@@ -12,25 +12,29 @@ The full static affiliate disclaimer was recovered from a custom HTML block. Cus
 
 The public email `sim@theoper8tor.com` was recovered from the Cloudflare-obfuscated link in the Google Account Purge article. The phone number is retained from the source. The broken Speaker menu URL and missing protocols on external/social URLs were normalized. Source paragraphs styled as headings were converted to body text where appropriate. Source typos in the homepage's “Brilliance” and “I'm a speaker” were corrected.
 
-## Content requiring owner review
+## Source inconsistencies and current editorial decisions
 
 These are source issues, not missing Nuxt features:
 
-- Initial Consultation is advertised as 90 minutes on Book Online and 30 minutes on its own page. Both source values are retained.
-- Visible VIP Day shows both `$3000 / 6 HR` and `$997` on Book Online. No authoritative replacement price was supplied.
+- Initial Consultation is advertised as 90 minutes on Book Online and 30 minutes on its own page. The owner confirmed using the detailed offer pages: the current website consistently uses 30 minutes.
+- Visible VIP Day shows both `$3000 / 6 HR` and `$997` on Book Online. VIP Day now uses an enquiry route; the six consultation prices were confirmed by the owner.
 - Schedule contains December 2022 purchase links and old event information. The source listings are retained as imported content; update before promoting them.
-- `/about` contains an unrelated Build.Inc gym template. It is preserved at its old address for review and is absent from the main navigation.
-- `/gmbauditsp2pplanner`, `/eoyoffercheckout` and `/thecaringcorner` return 404 on the source site. Their Connect-page links remain explicit external URLs to the source, so they do not create nonexistent local pages. Replace them with working destinations before launch.
-- Source Shop buttons have unspecified/empty destinations. A Contact action was added; the full services overview and linked consultation pages provide working alternatives.
+- `/about` contains an unrelated Build.Inc gym template. It has been replaced with Staci’s source biography and is now linked as Meet Staci.
+- `/gmbauditsp2pplanner`, `/eoyoffercheckout` and `/thecaringcorner` return 404 on the source site. These broken campaign links have been removed from the current Connect page.
+- Source Shop buttons have unspecified/empty destinations. Shop has been reorganised as Resources at the same URL, with working links to planners, AI support, videos and the blog.
 - Ready to Scale pages contain a “Sign up as an Affiliate” button without a destination. That nonfunctional button is omitted; programme copy and calendars are retained.
 - The original blog template contained an unrelated invitation footer for another project. That shared footer was omitted from the migrated articles.
-- The source AI page contains placeholder phrases such as “Small Call to Action Headline”. These remain editable source copy and should be revised.
+- The source AI page contains placeholder phrases such as “Small Call to Action Headline”. These placeholder headings have been replaced; its existing specialist calendar remains available.
 - The source phone/contact introduction and copyright years are retained; confirm current business details and dates.
 
 ## Validation and limits
 
-Type checking, static generation and content integrity tests cover public addresses, internal links, local images, menu/footer links, redirect destinations and Studio preview mappings. Marpos Studio's project inspector recognises all 12 collections without warnings. Desktop/mobile preview checks cover the homepage, navigation and representative pages. Provider pages were retrieved and contact/calendar embeds are checked without submitting data; purchases, email delivery and actual appointment creation were not exercised.
+Type checking, static generation and content integrity tests cover public addresses, internal links, local images, menu/footer links, redirect destinations and Studio preview mappings. Marpos Studio's project inspector recognises all 13 collections without warnings. Desktop/mobile preview checks cover the homepage, navigation and representative pages. Provider pages were retrieved and contact/calendar embeds are checked without submitting data; purchases, email delivery and actual appointment creation were not exercised.
 
 Static redirects use `public/_redirects`; hosts that do not support that format need equivalent redirect rules. Node hosting uses Nuxt route rules. A Dockerfile is included using vdzmediation's approach, but Docker was not built in this session.
 
-No repository or hosting configuration was changed. Create/connect the project repository and deployment separately. Maintain `content/`, not the archived HTML. `scripts/migrate-source.py` is an extraction aid, not a build dependency; rerunning it would overwrite editorial changes.
+The repository is connected to ludulicious/theoper8tor. Hosting must be configured separately. Maintain `content/`, not the archived HTML. `scripts/migrate-source.py` is an extraction aid, not a build dependency; rerunning it would overwrite editorial changes.
+
+## Sales content update
+
+See `docs/sales-content.md` for the October 2026 reorganisation around consultations and strategy sessions, confirmed prices, and the shared offer data used on Home, Services and Book a Session. Historical source HTML remains archived for reference; it does not describe the current presentation. Contact forms and calendars load directly, while video players load on request.

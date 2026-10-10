@@ -1,0 +1,297 @@
+@import "../../../tokens.css";
+/* Hallmark · modern-minimal · existing Oper8tor black/gold/ivory
+ * Split Studio / H2 diptych · Catalogue / F3 specification rows
+ * pre-emit critique: P4 H4 E4 S4 R4 V4 */
+.sales-page {
+  color: var(--color-paper);
+}
+.sales-page .site-section {
+  padding-block: var(--space-section);
+}
+.sales-page .section-inner {
+  max-width: var(--width-sales);
+}
+.sales-page .section-inner > h1,
+.sales-page .section-inner > h2 {
+  text-align: left;
+  max-width: 850px;
+}
+.sales-page .section-inner > p {
+  max-width: 780px;
+}
+.sales-page h1 {
+  font-size: clamp(2.25rem, 4.6vw, 4rem);
+  line-height: 1.15;
+  color: var(--color-paper);
+  margin-bottom: 1.5rem;
+}
+.sales-page h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: var(--color-paper);
+}
+.sales-page h3 {
+  color: var(--color-gold);
+  text-transform: none;
+}
+.sales-page h1,
+.sales-page h2,
+.sales-page h3 {
+  min-width: 0;
+}
+.sales-page .action-row {
+  text-align: left;
+}
+.sales-page .action-link,
+.offer-page .action-link {
+  font-size: 1.1rem;
+  white-space: nowrap;
+  border-radius: 2px;
+  padding: 14px 24px;
+}
+.sales-page .content-grid {
+  align-items: start;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+.sales-page .content-panel p {
+  color: var(--color-paper-muted);
+}
+.sales-page .site-section:nth-child(even) {
+  background: var(--color-ink);
+}
+.home-page.sales-page .site-section:first-child {
+  padding: var(--space-section) 24px;
+  text-align: left;
+}
+.home-page.sales-page .site-section:nth-child(2) .section-inner {
+  text-align: left;
+}
+.story-hero {
+  padding: clamp(2rem, 5vw, 4rem) 24px;
+  background: var(--color-ink);
+}
+.story-hero-inner {
+  max-width: var(--width-sales);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.story-hero-copy {
+  min-width: 0;
+}
+.story-hero-copy > p:not(.eyebrow) {
+  max-width: 570px;
+  color: var(--color-paper-muted);
+  font-size: 1.05rem;
+}
+.story-hero-image {
+  align-self: stretch;
+  min-width: 0;
+  display: flex;
+}
+.story-hero-image img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 640px;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center 28%;
+}
+.eyebrow {
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.offer-list {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.offer-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 0.55fr);
+  gap: 2.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+.offer-row h3 {
+  font-size: 1.65rem;
+  margin: 0;
+  line-height: 1.35;
+}
+.offer-row h3 a {
+  text-decoration: none;
+  color: var(--color-paper);
+}
+.offer-row h3 a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+.offer-row .eyebrow {
+  font-size: 0.7rem;
+  margin-bottom: 0.65rem;
+}
+.offer-summary p {
+  color: var(--color-paper-muted);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+.session-duration {
+  color: var(--color-paper-muted);
+  font-size: 0.85rem;
+}
+.offer-summary .session-duration {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+.offer-choice {
+  text-align: right;
+}
+.session-price {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  color: var(--color-paper);
+}
+.session-price span {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--color-paper-muted);
+}
+.text-link {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.offer-page {
+  max-width: var(--width-sales);
+  padding: 3rem 24px var(--space-section);
+  margin: auto;
+}
+.offer-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+.offer-intro h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+}
+.lead {
+  font-size: 1.15rem;
+  color: var(--color-paper-muted);
+}
+.booking-summary {
+  border-top: 3px solid var(--color-gold);
+  padding: 1.75rem;
+  background: var(--color-ink);
+}
+.booking-summary .session-price {
+  font-size: 3rem;
+}
+.booking-summary > p:not(.session-price):not(.eyebrow) {
+  color: var(--color-paper-muted);
+  font-size: 0.9rem;
+}
+.booking-summary .action-link {
+  display: block;
+  text-align: center;
+  padding-inline: 12px;
+}
+.booking-summary .booking-note {
+  margin: 1rem 0 0;
+  font-size: 0.75rem !important;
+}
+.offer-body {
+  max-width: 740px;
+  padding-top: 3rem;
+}
+.offer-body h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+}
+.offer-body h2:first-child {
+  margin-top: 0;
+}
+.offer-back {
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+.sales-page .provider-embed {
+  max-width: 800px;
+  margin-inline: 0;
+}
+.breadcrumb a,
+.breadcrumb > span {
+  white-space: nowrap;
+}
+#main-navigation .connect-link:hover {
+  background: var(--color-bright);
+  color: var(--color-black);
+}
+@media (max-width: 767px) {
+  .story-hero-inner,
+  .offer-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .story-hero {
+    padding-inline: 20px;
+  }
+  .story-hero-image img {
+    min-height: 0;
+    max-height: 400px;
+    aspect-ratio: 4 / 3;
+    object-position: center 22%;
+  }
+  .offer-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 1.75rem;
+  }
+  .offer-choice {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .offer-choice .session-price {
+    margin: 0;
+    font-size: 1.85rem;
+  }
+  .offer-intro {
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+  }
+  .offer-page {
+    padding-inline: 20px;
+  }
+  .sales-page .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .booking-summary {
+    padding: 1.5rem;
+  }
+  .header-inner {
+    gap: 12px;
+  }
+}
+.sales-page :is(h1, h2, h3) > a {
+  color: inherit;
+  text-decoration: none;
+}
+.sales-page :is(h1, h2, h3) > a:hover {
+  text-decoration: underline;
+}

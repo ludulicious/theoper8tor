@@ -18,14 +18,18 @@ skipLink: Skip to content
 readMore: Read more
 backLabel: Back to the blog
 footerLinks:
-  - label: Services
-    to: /services
-  - label: Book Online
+  - label: Consultations
     to: /book-online
   - label: Contact
     to: /contact
+  - label: Resources
+    to: /shop
+  - label: Videos
+    to: /videos
   - label: Blog
     to: /blog
+  - label: Newsletter
+    to: /newsletter
   - label: Affiliate Disclaimer
     to: /affiliate
   - label: Donate to F.L.O.U.R.I.S.H.
@@ -35,5 +39,3 @@ socialLinks:
     to: https://facebook.com/theoper8tor
   - label: LinkedIn
     to: https://linkedin.com/in/theoper8tor
-  - label: Videos
-    to: /videos

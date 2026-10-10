@@ -4,7 +4,7 @@ import redirects from "./shared/legacy-redirects.json";
 export default defineNuxtConfig({
   compatibilityDate: "2026-09-01",
   modules: ["@nuxt/ui", "@nuxt/content", "@nuxt/image"],
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.css", "~/assets/css/sales.css"],
   devtools: { enabled: false },
   ui: { colorMode: false, fonts: false },
   icon: { provider: "none", clientBundle: { scan: true } },
