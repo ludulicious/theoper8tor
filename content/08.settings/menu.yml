@@ -1,6 +1,6 @@
 title: Main menu
 items:
-  - label: Services
+  - label: How I can help
     to: /services
   - label: Meet Staci
     to: /about

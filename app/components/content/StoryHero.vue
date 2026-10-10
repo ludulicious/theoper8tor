@@ -1,8 +1,20 @@
 <script setup lang="ts">
-defineProps<{ image: string; alt: string; eyebrow?: string }>();
+defineProps<{
+  image: string;
+  alt: string;
+  eyebrow?: string;
+  position?: string;
+  mobilePosition?: string;
+}>();
 </script>
 <template>
-  <section class="story-hero">
+  <section
+    class="story-hero"
+    :style="{
+      '--photo-position': position,
+      '--photo-mobile-position': mobilePosition,
+    }"
+  >
     <div class="story-hero-inner">
       <div class="story-hero-copy">
         <p v-if="eyebrow" class="eyebrow">{{ eyebrow }}</p>

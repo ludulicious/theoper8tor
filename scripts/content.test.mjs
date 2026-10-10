@@ -140,7 +140,7 @@ test("consultations have complete scopes and valid provider booking destinations
     );
   }
   assert.ok(offers.some((offer) => offer.data.featured));
-  for (const path of ["/", "/services", "/book-online"]) {
+  for (const path of ["/", "/book-online"]) {
     const page = pages.find((page) => page.path === path);
     assert.ok(page.body.includes("offer-list"), path);
     assert.doesNotMatch(

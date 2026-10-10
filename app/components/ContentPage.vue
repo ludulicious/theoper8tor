@@ -52,6 +52,7 @@ const { data: posts } = await useAsyncData("blog-list", () =>
         'home-page': path === '/',
         'article-page': page.layout === 'article',
         'booking-page': path === '/book-online',
+        'services-page': collection === 'services',
         'sales-page': page.sales,
       },
     ]"

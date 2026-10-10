@@ -3,5 +3,6 @@
   --color-paper: #f5f0e6;
   --color-paper-muted: #c8c2b7;
   --space-section: clamp(3rem, 7vw, 6rem);
+  --space-section-compact: clamp(1.5rem, 3vw, 2rem);
   --width-sales: 1100px;
 }

@@ -76,7 +76,7 @@ Offer pages use `/book-online/[offer]`, including `/book-online/initial-consulta
 
 ## Consultation summaries and the sales journey
 
-Home, Services and Book a Session use the same offer data. Edit a consultation once in **Offers** to update its listing everywhere:
+Home and Book a Session use the same offer data. Services explains the areas of support and the working process; it links to Book a Session for the comparison of packages, prices and durations. Edit a consultation once in **Offers** to update its listing everywhere:
 
 - **Kind:** `consultation` includes it in session lists; `programme` keeps it separate.
 - **Price:** a number in USD, without a currency symbol or comma. The site formats it consistently.
@@ -89,6 +89,8 @@ Home, Services and Book a Session use the same offer data. Edit a consultation o
 
 The consultation detail layout supplies the title, summary, duration, price and booking button. Its story body should start with level-two headings, and explain scope and deliverables without repeating prices or adding another booking button. Programme pages retain their ordinary story layout. `sales` selects the shared sales styling and is hidden from ordinary editing.
 
-`::offer-list` inserts all consultations. `::offer-list{featured="true"}` inserts only featured consultations. `::story-hero{image="/images/86cafeac5a88.webp" alt="Staci Moore" eyebrow="Meet The Oper8tor"}` places editable Markdown beside a photograph. As with other components, preserve the closing colon fence.
+`::offer-list` inserts all consultations as pricing cards with the session name, price, duration, summary and a link to the full scope and booking action. `::offer-list{featured="true"}` inserts only featured consultations. `::story-hero{image="/images/86cafeac5a88.webp" alt="Staci Moore" eyebrow="Meet The Oper8tor"}` places editable Markdown beside a photograph. As with other components, preserve the closing colon fence.
 
-The main menu sends visitors to Services, Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources retains `/shop` so existing links work. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.
+The main menu sends visitors to How I can help (Services), Meet Staci, Speaking and Contact, with **Book a session** as the primary action. Resources retains `/shop` so existing links work. Videos, blog and newsletter remain in the footer. VIP Day pricing is enquiry only. Existing forms and calendars remain with their provider.
+
+Use `::photo-story{image="/images/9c2d4e9ea8d5.webp" alt="Staci Moore in yellow"}` for a photograph beside a story section. The photograph sits on the left on larger screens and above the story on phones. Its paragraphs, headings and links are ordinary editable Markdown. Change the image path and alternative text in the component attributes to choose another photograph from the library.

@@ -4,7 +4,7 @@ Priority confirmed by the owner: consultations and strategy sessions. Prices con
 
 ## Visitor route
 
-Home introduces the work and three starting points. Services explains the kinds of support. Book a Session compares all six consultations by need, scope, duration and price. A session detail explains its deliverables and leads to its original provider booking URL. Offers are the single source for the summaries and pricing in all three lists.
+Home introduces the work and three starting points. Services explains the business problems Staci helps with and how the work happens, without repeating the package comparison. Book a Session compares all six consultations by need, scope, duration and price. A session detail explains its deliverables and leads to its original provider booking URL. Offers are the single source for the summaries and pricing in the Home and booking lists.
 
 Speaking is a separate event enquiry path. About now describes Staci using the original biography, replacing the unrelated gym template. Contact keeps the original provider form. Connect is a short directory. Resources keeps the original `/shop` URL and groups planners, AI support, videos, reading and affiliate recommendations. Ready to Scale is a distinct programme with its existing calendars, one introduction video and an enquiry route for scope and price. AI support retains its original specialist calendar without placeholder headings.
 

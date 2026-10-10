@@ -93,11 +93,11 @@
   "content/07.photos/61b9a746dc90.yml": "/",
   "content/07.photos/61e08b30e14c.yml": "/",
   "content/07.photos/706eccddfbd4.yml": "/",
-  "content/07.photos/76d5cfe4309f.yml": "/",
-  "content/07.photos/86cafeac5a88.yml": [
-    "/",
-    "/speaker",
+  "content/07.photos/76d5cfe4309f.yml": [
     "/about"
+  ],
+  "content/07.photos/86cafeac5a88.yml": [
+    "/"
   ],
   "content/07.photos/8af3cfaaf812.yml": "/",
   "content/07.photos/8b1f906d7931.yml": "/",
@@ -111,7 +111,9 @@
     "/bookingpagevisible",
     "/intentionalcoffeechat"
   ],
-  "content/07.photos/9c2d4e9ea8d5.yml": "/",
+  "content/07.photos/9c2d4e9ea8d5.yml": [
+    "/"
+  ],
   "content/07.photos/9d53416e6788.yml": "/",
   "content/07.photos/9f196af9ff11.yml": "/",
   "content/07.photos/a03ff202ecbe.yml": [
@@ -154,14 +156,18 @@
   "content/07.photos/d2e311a43407.yml": "/",
   "content/07.photos/d49da7d0f5b2.yml": "/",
   "content/07.photos/d70142f31e8b.yml": "/",
-  "content/07.photos/d8a026449dc0.yml": "/",
+  "content/07.photos/d8a026449dc0.yml": [
+    "/speaker"
+  ],
   "content/07.photos/e51b858fc130.yml": [
     "/blog/b/google-account-purge"
   ],
   "content/07.photos/e727237a175d.yml": [
     "/p2pplanner"
   ],
-  "content/07.photos/eac6725b744f.yml": "/",
+  "content/07.photos/eac6725b744f.yml": [
+    "/services"
+  ],
   "content/07.photos/ef3f1cc464cd.yml": "/",
   "content/07.photos/f2d8939b0807.yml": "/",
   "content/07.photos/f5a604bee4a6.yml": "/",

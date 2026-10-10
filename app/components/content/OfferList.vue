@@ -23,25 +23,21 @@ const money = (price?: number) =>
       }).format(price);
 </script>
 <template>
-  <div class="offer-list">
-    <article v-for="offer in shown" :key="offer.path" class="offer-row">
-      <div class="offer-need">
+  <div class="pricing-grid">
+    <article v-for="offer in shown" :key="offer.path" class="pricing-card">
+      <div class="pricing-card-intro">
         <p class="eyebrow">{{ offer.bestFor }}</p>
-        <h3>
-          <NuxtLink :to="offer.path">{{ offer.title }}</NuxtLink>
-        </h3>
+        <h3>{{ offer.title }}</h3>
       </div>
-      <div class="offer-summary">
-        <p>{{ offer.summary }}</p>
+      <div class="pricing-card-rate">
+        <p class="session-price">{{ money(offer.price) }} <span>USD</span></p>
         <p class="session-duration">{{ offer.duration }}</p>
       </div>
-      <div class="offer-choice">
-        <p class="session-price">{{ money(offer.price) }} <span>USD</span></p>
-        <NuxtLink :to="offer.path" class="text-link"
-          >View session <span aria-hidden="true">↗</span
-          ><span class="sr-only">: {{ offer.title }}</span></NuxtLink
-        >
-      </div>
+      <p class="pricing-card-summary">{{ offer.summary }}</p>
+      <NuxtLink :to="offer.path" class="pricing-card-action">
+        View session <span aria-hidden="true">→</span>
+        <span class="sr-only">: {{ offer.title }}</span>
+      </NuxtLink>
     </article>
   </div>
 </template>
