@@ -6,7 +6,7 @@ export const pageSources = {
   offers: {
     include: "02.services/*.md",
     exclude: ["02.services/00.index.md"],
-    prefix: "/",
+    prefix: "/book-online",
   },
   booking: { include: "03.booking/*.md", prefix: "/" },
   contact: { include: "04.contact.md", prefix: "/" },

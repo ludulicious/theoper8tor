@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { data } = await useSiteContent();
+const logo = computed(
+  () => data.value?.site?.headerLogo || data.value?.site?.logo,
+);
 const open = ref(false);
 const route = useRoute();
 watch(
@@ -17,11 +20,11 @@ function escape(event: KeyboardEvent) {
     <div class="header-inner">
       <NuxtLink to="/" class="brand" :aria-label="data?.site?.name"
         ><img
-          v-if="data?.site?.logo"
-          :src="data.site.logo.src"
-          :alt="data.site.logo.alt"
-          width="120"
-          height="65"
+          v-if="logo"
+          :src="logo.src"
+          :alt="logo.alt"
+          width="312"
+          height="128"
       /></NuxtLink>
       <button
         class="menu-toggle"

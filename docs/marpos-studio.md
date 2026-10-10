@@ -25,7 +25,7 @@ The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must st
 | Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility              |
 | Menu / Site | `content/08.settings/`                            | Navigation, logo, contact details and footer                           |
 
-Each page has Title, Description and optional SEO Title. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap.
+Each page has Title, Description and optional SEO Title. Optional Breadcrumbs let you set an ordered trail of labels and links; leave the final item without a link. If omitted, the page uses Home and its title; offers include Book Now between them. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap. Header Logo and Footer Logo select separate transparent vector wordmarks suited to the dark header and footer, with gold lettering and ivory accents. The original Logo stays available for social sharing and as a fallback.
 
 ## Stories and reusable sections
 
@@ -34,17 +34,17 @@ Use the visual story editor for paragraphs, headings, lists, links and photograp
 - `::site-section` groups a section. Its children are normal Markdown.
 - `::content-grid{columns="2"}` groups two or three columns. Each `::content-panel` holds ordinary story content.
 - `::action-link{label="Book now" to="/book-online"}` provides a button link.
-- `::provider-embed{src="https://link.funnelstreams.com/widget/form/..." title="Contact"}` opens an existing provider form or calendar. Use `::video-player{video="security-cameras"}` for a library video.
+- `::provider-embed{src="https://link.funnelstreams.com/widget/form/..." title="Contact"}` embeds an existing provider form or calendar directly on the page. Use `::video-player{video="security-cameras"}` for a library video.
 
 Nested components use progressively longer colon fences; preserve the matching opening and closing fences when editing source mode. Keep one level-one heading per page. Use smaller headings for sections, and paragraphs for descriptions and prices.
 
-Forms and calendars remain hosted by the original providers. Change their URLs in the relevant story when changing providers; the ProviderEmbed allowlist must also be updated by a developer for a different host. Visitors explicitly open the embed and have a direct new-tab fallback. Provider form labels, consent text, notifications and payment products are maintained in that provider, not in Studio.
+Forms and calendars remain hosted by the original providers. Change their URLs in the relevant story when changing providers; the ProviderEmbed allowlist must also be updated by a developer for a different host. Forms and calendars load directly in iframes, with a new-tab fallback link below each embed. Provider form labels, consent text, notifications and payment products are maintained in that provider, not in Studio.
 
 ## New content and ordering
 
 Choose Add content in Offers, Booking, Information or Blog. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
 
-- `content/02.services/08.new-consultation.md` → `/new-consultation`
+- `content/02.services/08.new-consultation.md` → `/book-online/new-consultation`
 - `content/05.information/08.new-page.md` → `/new-page`
 - `content/06.blog/05.new-story.md` → `/blog/b/new-story`
 
@@ -71,3 +71,5 @@ The original Uncle Nearest video is unavailable on YouTube. Its entry and ID are
 `studio.preview.json` maps pages to their own addresses, settings to Home, images to the pages where they are used, and videos to the gallery and pages that reference them. New documents are discovered from their collection source and filename. This file controls previews only; it does not create routes.
 
 Before launch, read `docs/migration.md` for the original site's conflicting prices, historical events, unrelated About template and missing external destinations. Publishing in Studio edits GitHub content; configure hosting to rebuild and publish the generated result afterward.
+
+Offer pages use `/book-online/[offer]`, including `/book-online/initial-consultation` and `/book-online/fastaction`. The previous root URLs redirect permanently to their new addresses. Studio previews and the sitemap use the nested URLs.

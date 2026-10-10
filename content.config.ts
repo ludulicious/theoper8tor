@@ -9,6 +9,14 @@ const page = z.object({
   title: z.string().min(1),
   description: z.string(),
   seoTitle: z.string().optional(),
+  breadcrumbs: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        to: z.string().optional(),
+      }),
+    )
+    .optional(),
 });
 const story = z.literal("story").default("story").editor({ hidden: true });
 export default defineContentConfig({
@@ -112,6 +120,8 @@ export default defineContentConfig({
         name: z.string(),
         url: z.string().url(),
         logo: image,
+        headerLogo: image.optional(),
+        footerLogo: image.optional(),
         phone: z.string(),
         phoneLink: z.string(),
         email: z.string(),

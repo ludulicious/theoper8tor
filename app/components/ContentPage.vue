@@ -12,6 +12,16 @@ const { data: page } = await useAsyncData(
 );
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
+const breadcrumbs = computed(
+  () =>
+    page.value?.breadcrumbs || [
+      { label: "Home", to: "/" },
+      ...(props.collection === "offers"
+        ? [{ label: "Book Now", to: "/book-online" }]
+        : []),
+      { label: page.value?.title },
+    ],
+);
 const canonical = computed(
   () =>
     `${settings.value?.site?.url || "https://theoper8tor.com"}${encodeURI(path.value)}`,
@@ -45,10 +55,21 @@ const { data: posts } = await useAsyncData("blog-list", () =>
       },
     ]"
   >
-    <div v-if="path !== '/'" class="breadcrumb">
-      <NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span
-      ><span>{{ page.title }}</span>
-    </div>
+    <nav v-if="path !== '/'" class="breadcrumb" aria-label="Breadcrumb">
+      <template v-for="(item, index) in breadcrumbs" :key="index">
+        <span v-if="index" aria-hidden="true">/</span>
+        <NuxtLink
+          v-if="item.to && index < breadcrumbs.length - 1"
+          :to="item.to"
+          >{{ item.label }}</NuxtLink
+        >
+        <span
+          v-else
+          :aria-current="index === breadcrumbs.length - 1 ? 'page' : undefined"
+          >{{ item.label }}</span
+        >
+      </template>
+    </nav>
     <ContentRenderer :value="page" class="page-story" />
     <div v-if="page.layout === 'blog'" class="blog-grid">
       <article v-for="post in posts" :key="post.path">

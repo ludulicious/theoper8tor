@@ -1,16 +1,19 @@
 <script setup lang="ts">
 const { data } = await useSiteContent();
+const logo = computed(
+  () => data.value?.site?.footerLogo || data.value?.site?.logo,
+);
 </script>
 <template>
   <footer class="site-footer">
     <div class="footer-inner">
       <NuxtLink to="/" class="footer-brand"
         ><img
-          v-if="data?.site?.logo"
-          :src="data.site.logo.src"
-          :alt="data.site.logo.alt"
-          width="120"
-          height="65"
+          v-if="logo"
+          :src="logo.src"
+          :alt="logo.alt"
+          width="312"
+          height="128"
       /></NuxtLink>
       <nav aria-label="Footer">
         <NuxtLink

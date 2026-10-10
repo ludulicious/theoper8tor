@@ -23,7 +23,7 @@ test("all pages have unique public addresses and required copy", () => {
 test("ordering numbers do not change page addresses; new pages inherit collection prefixes", () => {
   assert.equal(
     pagePath("02.services/09.new-service.md", pageSources.offers),
-    "/new-service",
+    "/book-online/new-service",
   );
   assert.equal(
     pagePath("06.blog/09.new-article.md", pageSources.blog),
@@ -98,5 +98,19 @@ test("video library references, thumbnails and Studio previews resolve", () => {
     for (const match of page.body.matchAll(/video-player\{video="([^"]+)"/g))
       assert.ok(slugs.has(match[1]), `${page.file}: ${match[1]}`);
     assert.doesNotMatch(page.body, /\]\(https:\/\/(?:www\.)?youtube\.com\//);
+  }
+});
+
+test("offer URLs are nested under booking and old URLs redirect directly", () => {
+  const offers = pages.filter((page) => page.collection === "offers");
+  assert.equal(offers.length, 7);
+  for (const offer of offers) {
+    assert.ok(offer.path.startsWith("/book-online/"), offer.path);
+    const oldPath = offer.path.replace("/book-online", "");
+    assert.equal(redirects[oldPath], offer.path);
+    for (const page of pages) {
+      assert.ok(!page.body.includes(`to="${oldPath}"`), page.file);
+      assert.ok(!page.body.includes(`](${oldPath})`), page.file);
+    }
   }
 });

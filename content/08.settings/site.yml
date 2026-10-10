@@ -4,6 +4,12 @@ url: https://theoper8tor.com
 logo:
   src: /images/41b657dea49b.jpeg
   alt: The Oper8tor
+headerLogo:
+  src: /images/theoper8tor-logo-header.svg
+  alt: The Oper8tor — powered by Staci Moore
+footerLogo:
+  src: /images/theoper8tor-logo-footer.svg
+  alt: The Oper8tor — powered by Staci Moore
 phone: 773.430.7337
 phoneLink: "+17734307337"
 email: sim@theoper8tor.com

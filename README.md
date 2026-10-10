@@ -16,7 +16,7 @@ The 31 editable pages include the main site, service details, Ready to Scale pro
 
 See [Marpos Studio editing guide](docs/marpos-studio.md) and [migration notes](docs/migration.md), including known source issues to review before launching. Marpos Studio's project inspector recognises 13 editable collections without warnings.
 
-Forms, calendars, video and Spotify load from their original external providers when a visitor opens them. Planner checkout opens the original provider-hosted funnel. No purchases or form submissions were performed during migration. Availability and delivery remain the provider's responsibility.
+Forms and calendars load directly in iframes from their original external providers. Video and Spotify load when a visitor opens them. Planner checkout opens the original provider-hosted funnel. No purchases or form submissions were performed during migration. Availability and delivery remain the provider's responsibility.
 
 ## Deployment
 

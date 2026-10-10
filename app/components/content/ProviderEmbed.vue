@@ -3,7 +3,7 @@ const props = withDefaults(
   defineProps<{ src: string; title: string; kind?: string }>(),
   { kind: "form" },
 );
-const loaded = ref(false);
+const opened = ref(false);
 const safeSrc = computed(() => {
   try {
     const url = new URL(props.src);
@@ -20,6 +20,14 @@ const safeSrc = computed(() => {
     return "";
   }
 });
+const isForm = computed(() => {
+  if (!safeSrc.value) return false;
+  const url = new URL(safeSrc.value);
+  return ["link.funnelstreams.com", "api.leadconnectorhq.com"].includes(
+    url.hostname,
+  );
+});
+const loaded = computed(() => isForm.value || opened.value);
 </script>
 <template>
   <div
@@ -33,7 +41,7 @@ const safeSrc = computed(() => {
   >
     <template v-if="!loaded">
       <p>{{ title }}</p>
-      <button class="action-link" @click="loaded = true">
+      <button class="action-link" @click="opened = true">
         {{ kind === "video" ? "Play video" : "Open " + title }}
       </button>
       <p class="provider-note">
@@ -59,5 +67,10 @@ const safeSrc = computed(() => {
       "
       referrerpolicy="strict-origin-when-cross-origin"
     />
+    <p v-if="isForm" class="provider-note">
+      <a :href="safeSrc" target="_blank" rel="noopener noreferrer"
+        >Open {{ title }} in a new tab ↗</a
+      >
+    </p>
   </div>
 </template>
