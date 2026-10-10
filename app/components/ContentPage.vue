@@ -12,15 +12,8 @@ const { data: page } = await useAsyncData(
 );
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: "Page not found" });
-provide("sectionPage", page);
 const mainPage = computed(() =>
   page.value && "cta" in page.value ? page.value : null,
-);
-const blogPage = computed(() =>
-  page.value &&
-  (page.value.layout === "blog" || page.value.layout === "article")
-    ? page.value
-    : null,
 );
 const breadcrumbs = computed(
   () =>
@@ -99,9 +92,8 @@ const { data: posts } = await useAsyncData("blog-list", () =>
       </template>
     </nav>
     <MainPage v-if="mainPage" :page="mainPage" />
-    <BlogPage v-else-if="blogPage" :page="blogPage" />
     <OfferPage v-else-if="collection === 'offers'" :path="path" />
-    <ContentRenderer v-else :value="page" class="page-story" />
+    <DocumentPage v-else :page="page" />
     <div v-if="page.layout === 'blog'" class="blog-grid">
       <article v-for="post in posts" :key="post.path">
         <NuxtLink :to="post.path"

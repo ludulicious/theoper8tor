@@ -17,11 +17,6 @@ test("all pages have unique public addresses and required copy", () => {
   for (const page of pages) {
     assert.ok(page.data.title?.trim(), page.file);
     assert.ok(page.data.description?.trim(), page.file);
-    assert.ok(
-      ["content", "offers", "blogIndex", "blog"].includes(page.collection) ||
-        page.data.studio?.blocks.some((block) => page.data[block.field]?.title),
-      page.file,
-    );
   }
 });
 test("ordering numbers do not change page addresses; new pages inherit collection prefixes", () => {
@@ -159,62 +154,27 @@ test("consultations have complete scopes and valid provider booking destinations
   }
 });
 
-// These checks cover the editing contract: every section tab must own its copy and fields.
-test("Studio sections have unique slots, editable fields and valid media and actions", () => {
-  for (const page of pages) {
-    if (["content", "offers", "blogIndex", "blog"].includes(page.collection))
-      continue;
-    const blocks = page.data.studio?.blocks;
-    assert.ok(blocks?.length, page.file);
-    assert.equal(
-      new Set(blocks.map((b) => b.id)).size,
-      blocks.length,
-      page.file,
-    );
-    assert.equal(
-      (page.body.match(/^::page-sections$/gm) || []).length,
-      1,
-      page.file,
-    );
-    assert.doesNotMatch(page.body, /^:{2,}(?!page-sections)[a-z]/m, page.file);
-    for (const block of blocks) {
-      assert.ok(page.data[block.field], `${page.file}: ${block.field}`);
-      assert.equal(block.component, "page-sections");
+test("supporting pages use plain Markdown and keep forms outside the story", () => {
+  const supporting = pages.filter((page) =>
+    ["booking", "information"].includes(page.collection),
+  );
+  assert.equal(supporting.filter((page) => page.data.form).length, 7);
+  for (const page of supporting) {
+    assert.equal(page.data.studio, undefined, page.file);
+    assert.doesNotMatch(page.body, /^:{2,}|^#[a-z]|^# /m, page.file);
+    if (page.data.form) {
       assert.equal(
-        (page.body.match(new RegExp(`^#${block.slot}$`, "gm")) || []).length,
-        1,
-        page.file,
+        new URL(page.data.form.url).hostname,
+        "link.funnelstreams.com",
       );
-      const section = page.data[block.field];
-      for (const image of [section.image, ...(section.images || [])].filter(
-        Boolean,
-      )) {
-        assert.ok(
-          existsSync(`${root}/public${image.src}`),
-          `${page.file}: ${image.src}`,
-        );
-        assert.equal(typeof image.alt, "string");
-      }
-      for (const link of [
-        ...(section.actions || []),
-        ...(section.links || []),
-        section.image,
-        ...(section.images || []),
-      ].filter((item) => item?.to)) {
-        if (link.to.startsWith("/"))
-          assert.ok(
-            known.has(link.to.split(/[?#]/)[0]) || redirects[link.to],
-            `${page.file}: ${link.to}`,
-          );
-      }
-      if (section.form) {
-        assert.equal(new URL(section.form.src).protocol, "https:");
-        assert.ok(section.form.title);
-      }
-      if (section.video)
-        assert.ok(existsSync(`${root}/content/09.videos/${section.video}.yml`));
+      assert.ok(page.data.form.title, page.file);
+      assert.doesNotMatch(page.body, /provider-embed|<iframe/, page.file);
     }
   }
+  assert.equal(
+    pages.find((page) => page.path === "/videos").data.videoLibrary,
+    true,
+  );
 });
 
 test("menu routes match their labels and content links use canonical routes", () => {

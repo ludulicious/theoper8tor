@@ -1,64 +1,14 @@
 import { defineCollection, defineContentConfig, z } from "@nuxt/content";
 import { pageSources } from "./shared/content-sources.mjs";
-import { sectionFields } from "./shared/section-fields.mjs";
 const image = z.object({
   src: z.string().editor({ input: "media" }),
   alt: z.string(),
 });
 const link = z.object({ label: z.string(), to: z.string() });
-const section = z.object({
-  title: z.string().optional(),
-  eyebrow: z.string().optional(),
-  image: image.extend({ to: z.string().optional() }).optional(),
-  images: z.array(image.extend({ to: z.string().optional() })).optional(),
-  actions: z.array(link).optional(),
-  links: z.array(link).optional(),
-  visible: z.boolean().default(true),
-  position: z.string().optional(),
-  mobilePosition: z.string().optional(),
-  layout: z
-    .enum(["standard", "hero", "photo"])
-    .default("standard")
-    .editor({ hidden: true }),
-  level: z.number().optional().editor({ hidden: true }),
-  sessions: z.object({ featuredOnly: z.boolean().default(false) }).optional(),
-  form: z
-    .object({
-      src: z.string().url(),
-      title: z.string(),
-      kind: z.string().optional().editor({ hidden: true }),
-    })
-    .optional(),
-  video: z.string().optional(),
-  videoLibrary: z.boolean().optional(),
-});
-const sectionsFor = (collection: keyof typeof sectionFields) =>
-  Object.fromEntries(
-    sectionFields[collection].map((name: string) => [
-      name,
-      section.optional().editor({ hidden: true }),
-    ]),
-  );
-const studio = z
-  .object({
-    blocks: z.array(
-      z.object({
-        id: z.string(),
-        label: z.string(),
-        type: z.literal("markdown"),
-        component: z.literal("page-sections"),
-        slot: z.string(),
-        field: z.string(),
-      }),
-    ),
-  })
-  .optional()
-  .editor({ hidden: true });
 const page = z.object({
-  studio,
   title: z.string().min(1),
   description: z.string(),
-  seoTitle: z.string().optional(),
+  seoTitle: z.string().optional().editor({ hidden: true }),
   seoDescription: z.string().optional().editor({ hidden: true }),
   pageName: z.string().optional().editor({ hidden: true }),
   sales: z.boolean().default(false).editor({ hidden: true }),
@@ -69,9 +19,21 @@ const page = z.object({
         to: z.string().optional(),
       }),
     )
-    .optional(),
+    .optional()
+    .editor({ hidden: true }),
 });
 const story = z.literal("story").default("story").editor({ hidden: true });
+const documentPage = page.extend({
+  layout: story,
+  image: image.optional(),
+  form: z
+    .object({
+      url: z.string().url(),
+      title: z.string(),
+    })
+    .optional(),
+  videoLibrary: z.boolean().optional().editor({ hidden: true }),
+});
 export default defineContentConfig({
   collections: {
     content: defineCollection({
@@ -130,7 +92,7 @@ export default defineContentConfig({
     offers: defineCollection({
       type: "page",
       source: pageSources.offers,
-      schema: page.omit({ studio: true }).extend({
+      schema: page.extend({
         breadcrumbs: page.shape.breadcrumbs.editor({ hidden: true }),
         layout: story,
         kind: z.enum(["consultation", "programme"]).default("programme"),
@@ -150,24 +112,24 @@ export default defineContentConfig({
     booking: defineCollection({
       type: "page",
       source: pageSources.booking,
-      schema: page.extend({ ...sectionsFor("booking"), layout: story }),
+      schema: documentPage,
     }),
     information: defineCollection({
       type: "page",
       source: pageSources.information,
-      schema: page.extend({ ...sectionsFor("information"), layout: story }),
+      schema: documentPage,
     }),
     blogIndex: defineCollection({
       type: "page",
       source: pageSources.blogIndex,
-      schema: page.omit({ studio: true }).extend({
+      schema: page.extend({
         layout: z.literal("blog").default("blog").editor({ hidden: true }),
       }),
     }),
     blog: defineCollection({
       type: "page",
       source: pageSources.blog,
-      schema: page.omit({ studio: true }).extend({
+      schema: page.extend({
         layout: z
           .literal("article")
           .default("article")

@@ -42,11 +42,13 @@ The blog overview and every article have only **Story** and **Details**. Story i
 
 ## Supporting pages
 
-Calendars and information pages retain their existing named section tabs. Their text and settings are edited in those sections; their Details fields include relevant provider links. `PageSections.vue` renders these supporting pages.
+Calendars, Resources, the newsletter, videos and other information pages now use only **Story** and **Details** too. Story contains ordinary headings, paragraphs, lists, links and additional photographs. Details contains Title, Description and an optional main Image. Pages with an external calendar or signup form also expose **Form**, with its URL and accessible title; the website embeds it automatically after the story. Videos automatically displays the Videos library after its introduction.
+
+There are no per-heading tabs or custom component wrappers on these pages. Programme calendar social links appear once as ordinary editable links. All supporting pages and blog posts share `DocumentPage.vue`; the old section renderer and section registry have been removed.
 
 ## New content and ordering
 
-For a new supporting page with named sections, start from a similar existing content file so its section fields, Studio tabs and text slots stay connected. A developer can add or rename section types in `shared/section-fields.mjs`. Choose Add content in Offers, Booking, Information or Blog for the new document. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
+Choose Add content in Offers, Booking, Information or Blog, fill in Details and write the story with regular Markdown. Start headings at level 2 because the website supplies the page title. The filename determines the public address; no route field is required. Numeric prefixes determine editor ordering and are removed from public URLs. For example:
 
 - `content/02.services/08.new-consultation.md` → `/book-a-session/new-consultation`
 - `content/05.information/08.new-page.md` → `/new-page`
@@ -112,7 +114,7 @@ Website images render through `NuxtImg` with responsive source sets and 1×/2× 
 - Blog: `/blog`; articles use `/blog/[slug]`.
 - Affiliate Disclaimer: `/affiliate-disclaimer`.
 
-All former public addresses redirect directly to their current destination with status 301. Internal links, breadcrumbs, previews and the sitemap use the current routes. Section field names are stable and do not depend on public route slugs.
+All former public addresses redirect directly to their current destination with status 301. Internal links, breadcrumbs, previews and the sitemap use the current routes. Editing fields do not depend on public route slugs.
 
 ## Nuxt page routing
 

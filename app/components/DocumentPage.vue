@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import type {
-  BlogCollectionItem,
-  BlogIndexCollectionItem,
-} from "@nuxt/content";
-defineProps<{ page: BlogCollectionItem | BlogIndexCollectionItem }>();
+import type { InformationCollectionItem } from "@nuxt/content";
+defineProps<{
+  page: Pick<
+    InformationCollectionItem,
+    "title" | "description" | "body" | "image" | "form" | "videoLibrary"
+  > & {
+    layout?: string;
+    author?: string;
+    date?: string;
+  };
+}>();
+const imageSizes = inject<Ref<string>>(
+  "contentImageSizes",
+  ref("100vw 375:90vw 640:92vw 1048:1000px"),
+);
 </script>
 <template>
   <div class="page-story">
@@ -18,12 +28,18 @@ defineProps<{ page: BlogCollectionItem | BlogIndexCollectionItem }>();
           v-if="'image' in page && page.image"
           :src="page.image.src"
           :alt="page.image.alt"
-          sizes="100vw 375:90vw 640:92vw 828:780px"
+          :sizes="imageSizes"
           densities="1x 2x"
           loading="eager"
           class="article-image"
         />
         <ContentRenderer :value="page" />
+        <ProviderEmbed
+          v-if="'form' in page && page.form"
+          :src="page.form.url"
+          :title="page.form.title"
+        />
+        <VideoGallery v-if="'videoLibrary' in page && page.videoLibrary" />
       </div>
     </section>
   </div>
