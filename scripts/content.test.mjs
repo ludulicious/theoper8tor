@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { parse } from "yaml";
 import { readPages, pagePath, root } from "./content-pages.mjs";
 import { pageSources } from "../shared/content-sources.mjs";
@@ -68,4 +68,35 @@ test("navigation, redirect destinations and Studio page previews are valid", () 
     readFileSync(`${root}/studio.preview.json`, "utf8"),
   );
   for (const page of pages) assert.equal(preview[page.file], page.path);
+});
+
+test("video library references, thumbnails and Studio previews resolve", () => {
+  const preview = JSON.parse(
+    readFileSync(`${root}/studio.preview.json`, "utf8"),
+  );
+  assert.ok(known.has("/videos"));
+  const slugs = new Set();
+  for (const file of readdirSync(`${root}/content/09.videos`).filter(
+    (file) => file.endsWith(".yml") && !file.startsWith("."),
+  )) {
+    const video = parse(
+      readFileSync(`${root}/content/09.videos/${file}`, "utf8"),
+    );
+    const slug = file.replace(/\.yml$/, "");
+    slugs.add(slug);
+    assert.match(video.youtubeId, /^[A-Za-z0-9_-]{11}$/);
+    assert.ok(existsSync(`${root}/public${video.image.src}`));
+    assert.equal(typeof video.visible, "boolean");
+    assert.ok(Array.isArray(video.categories));
+    assert.ok(preview[`content/09.videos/${file}`].includes("/videos"));
+    for (const page of pages.filter((page) =>
+      page.body.includes(`video="${slug}"`),
+    ))
+      assert.ok(preview[`content/09.videos/${file}`].includes(page.path));
+  }
+  for (const page of pages) {
+    for (const match of page.body.matchAll(/video-player\{video="([^"]+)"/g))
+      assert.ok(slugs.has(match[1]), `${page.file}: ${match[1]}`);
+    assert.doesNotMatch(page.body, /\]\(https:\/\/(?:www\.)?youtube\.com\//);
+  }
 });

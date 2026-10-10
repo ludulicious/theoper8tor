@@ -1,0 +1,12 @@
+title: Videos
+icon: i-lucide-video
+studio:
+  filters:
+    - field: categories
+      label: Category
+    - field: visible
+      label: Visibility
+  view: media
+  media:
+    kind: video
+    thumbnailAspectRatio: 16:9

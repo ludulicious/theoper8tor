@@ -29,5 +29,5 @@ socialLinks:
     to: https://facebook.com/theoper8tor
   - label: LinkedIn
     to: https://linkedin.com/in/theoper8tor
-  - label: YouTube
-    to: https://youtube.com/theoper8tor
+  - label: Videos
+    to: /videos

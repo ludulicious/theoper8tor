@@ -12,9 +12,9 @@ pnpm generate
 
 Preview: http://localhost:3109. Static output: `.output/public`. For a Node server, run `pnpm build` and `node .output/server/index.mjs`. The pnpm version is pinned in package.json. Stop the development server before running typecheck or a production build, because Nuxt prepare regenerates the development manifest.
 
-The 30 editable pages include the main site, service details, Ready to Scale programme and booking pages, the current Connect page, planner and AI pages, newsletter, legal information and four blog articles. Original black/gold branding, local Oswald/Open Sans fonts, photographs and source copy are retained. Long text previously styled as headings is normal body copy. Source exports are archived in `docs/source/`; ongoing edits belong in `content/`.
+The 31 editable pages include the main site, service details, Ready to Scale programme and booking pages, the current Connect page, planner and AI pages, newsletter, legal information and four blog articles. Original black/gold branding, local Oswald/Open Sans fonts, photographs and source copy are retained. Long text previously styled as headings is normal body copy. Source exports are archived in `docs/source/`; ongoing edits belong in `content/`.
 
-See [Marpos Studio editing guide](docs/marpos-studio.md) and [migration notes](docs/migration.md), including known source issues to review before launching. Marpos Studio's project inspector recognises 12 editable collections without warnings.
+See [Marpos Studio editing guide](docs/marpos-studio.md) and [migration notes](docs/migration.md), including known source issues to review before launching. Marpos Studio's project inspector recognises 13 editable collections without warnings.
 
 Forms, calendars, video and Spotify load from their original external providers when a visitor opens them. Planner checkout opens the original provider-hosted funnel. No purchases or form submissions were performed during migration. Availability and delivery remain the provider's responsibility.
 

@@ -6,7 +6,7 @@ The editing contract follows vdzmediation. There is no Nuxt Studio login. Conten
 
 Put this project, including `content.config.ts`, `content/`, `public/`, `pnpm-lock.yaml` and `studio.preview.json`, in its own GitHub repository. Select that repository and project folder in Marpos Studio. Let Studio install dependencies and start `pnpm dev`. Review edits in Preview this page, save them, and publish through Studio's normal review flow. Your hosting must rebuild the website after publication.
 
-This project is prepared locally. It has not yet been connected to a GitHub repository or deployed.
+The project is connected to `ludulicious/theoper8tor` on GitHub. Hosting must still be configured separately.
 
 ## Where to edit
 
@@ -22,6 +22,7 @@ This project is prepared locally. It has not yet been connected to a GitHub repo
 | Blog Index  | `content/06.blog/00.index.md`                     | Blog introduction                                                      |
 | Blog        | `content/06.blog/` excluding the overview         | Articles, automatically listed on Blog                                 |
 | Photos      | `content/07.photos/`                              | Image library                                                          |
+| Videos      | `content/09.videos/`                              | YouTube library with categories, thumbnails and visibility              |
 | Menu / Site | `content/08.settings/`                            | Navigation, logo, contact details and footer                           |
 
 Each page has Title, Description and optional SEO Title. Layout is filled by the collection and hidden from ordinary editing. Article images use the media picker and can be selected in the Photos library. Menu links and footer links are independently editable lists. Site URL controls canonical addresses and the sitemap.
@@ -33,7 +34,7 @@ Use the visual story editor for paragraphs, headings, lists, links and photograp
 - `::site-section` groups a section. Its children are normal Markdown.
 - `::content-grid{columns="2"}` groups two or three columns. Each `::content-panel` holds ordinary story content.
 - `::action-link{label="Book now" to="/book-online"}` provides a button link.
-- `::provider-embed{src="https://link.funnelstreams.com/widget/form/..." title="Contact"}` opens an existing provider form or calendar. YouTube uses `kind="video"`.
+- `::provider-embed{src="https://link.funnelstreams.com/widget/form/..." title="Contact"}` opens an existing provider form or calendar. Use `::video-player{video="security-cameras"}` for a library video.
 
 Nested components use progressively longer colon fences; preserve the matching opening and closing fences when editing source mode. Keep one level-one heading per page. Use smaller headings for sections, and paragraphs for descriptions and prices.
 
@@ -55,8 +56,18 @@ The library supports category and visibility filters, uploads to `public/images/
 
 `visible` controls library metadata; pages display their selected image directly. To remove a photograph from a page, remove or replace the page's image. Updating a library item's source does not rewrite existing inline Markdown image paths: select the new image on each page that uses it.
 
+## Videos
+
+The Videos collection follows the Amstel Gospel Choir media library: add a title, an 11-character YouTube ID (the value after `v=` or `youtu.be/`), thumbnail with alternative text, categories and order. Lower order values appear first. Switch Visible off to hide a video both in the gallery and on pages that reference it. Thumbnails can be chosen from Photos.
+
+All visible videos appear automatically at `/videos`; category filters are built from their categories. The page introduction is editable in Information → Videos. Each thumbnail opens an embedded YouTube player on the website, with fullscreen support; YouTube loads only after Play is clicked. Selecting another gallery video stops the previous one.
+
+To insert a library video into another page, use `::video-player{video="security-cameras"}` in source mode, with the filename without `.yml` as the video value. Keep the matching closing `::` fence. Updating a library entry updates all its players. Rename its filename only if you also update page references. `::video-gallery` inserts the complete library.
+
+The original Uncle Nearest video is unavailable on YouTube. Its entry and ID are retained with Visible off, and the site logo is its fallback thumbnail. Replace the ID and thumbnail, then switch Visible on to restore it to the gallery and homepage.
+
 ## Preview and publication
 
-`studio.preview.json` maps pages to their own addresses, settings to Home, and images to the pages where they are used. New documents are discovered from their collection source and filename. This file controls previews only; it does not create routes.
+`studio.preview.json` maps pages to their own addresses, settings to Home, images to the pages where they are used, and videos to the gallery and pages that reference them. New documents are discovered from their collection source and filename. This file controls previews only; it does not create routes.
 
 Before launch, read `docs/migration.md` for the original site's conflicting prices, historical events, unrelated About template and missing external destinations. Publishing in Studio edits GitHub content; configure hosting to rebuild and publish the generated result afterward.

@@ -47,6 +47,17 @@ for (const file of readdirSync(`${root}/content/07.photos`).filter(
     .map((page) => page.path);
   preview[`content/07.photos/${file}`] = matches.length ? matches : "/";
 }
+for (const file of readdirSync(`${root}/content/09.videos`).filter(
+  (file) => file.endsWith(".yml") && !file.startsWith("."),
+)) {
+  const slug = file.replace(/\.yml$/, "");
+  preview[`content/09.videos/${file}`] = [
+    "/videos",
+    ...pages
+      .filter((page) => page.body.includes(`video="${slug}"`))
+      .map((page) => page.path),
+  ];
+}
 writeFileSync(
   `${root}/studio.preview.json`,
   JSON.stringify(preview, null, 2) + "\n",

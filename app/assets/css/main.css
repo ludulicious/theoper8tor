@@ -445,3 +445,95 @@ li {
 .audio-embed iframe {
   height: 380px;
 }
+
+.video-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.5rem 0 2rem;
+}
+.video-filters button {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  cursor: pointer;
+}
+.video-filters button[aria-pressed="true"] {
+  color: #000;
+  background: var(--color-gold);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+.video-card {
+  margin: 0;
+  min-width: 0;
+}
+.video-card button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background: #111;
+  cursor: pointer;
+}
+.video-card button,
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+.video-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0;
+}
+.video-card iframe {
+  display: block;
+}
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-gold);
+  color: #000;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  padding-left: 0.2rem;
+}
+.video-play-label {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  color: #fff;
+  background: #000c;
+}
+.video-card figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+.video-card button:focus-visible,
+.video-filters button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+.inline-video {
+  margin: 1.5rem 0;
+}
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}

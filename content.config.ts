@@ -81,6 +81,18 @@ export default defineContentConfig({
         credit: z.string().optional(),
       }),
     }),
+    videos: defineCollection({
+      type: "data",
+      source: { include: "09.videos/*.yml", exclude: ["**/.navigation.yml"] },
+      schema: z.object({
+        title: z.string().min(1),
+        youtubeId: z.string().regex(/^[A-Za-z0-9_-]{11}$/),
+        image,
+        visible: z.boolean().default(true),
+        order: z.number().nonnegative().default(0),
+        categories: z.array(z.string().trim().min(1)).default([]),
+      }),
+    }),
     menu: defineCollection({
       type: "data",
       source: "08.settings/menu.yml",

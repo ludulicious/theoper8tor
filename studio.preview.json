@@ -26,6 +26,7 @@
   "content/05.information/05.p2pplanner.md": "/p2pplanner",
   "content/05.information/06.aicompanion.md": "/aicompanion",
   "content/05.information/07.newsletter.md": "/newsletter",
+  "content/05.information/08.videos.md": "/videos",
   "content/06.blog/00.index.md": "/blog",
   "content/06.blog/01.what-is-imposter-syndrome.md": "/blog/b/what-is-imposter-syndrome",
   "content/06.blog/02.google-account-purge.md": "/blog/b/google-account-purge",
@@ -264,5 +265,17 @@
   ],
   "content/07.photos/fe1862baf5ff.yml": [
     "/readytoscale"
+  ],
+  "content/09.videos/ready-to-scale.yml": [
+    "/videos",
+    "/readytoscale"
+  ],
+  "content/09.videos/security-cameras.yml": [
+    "/videos",
+    "/shop"
+  ],
+  "content/09.videos/uncle-nearest.yml": [
+    "/videos",
+    "/"
   ]
 }
