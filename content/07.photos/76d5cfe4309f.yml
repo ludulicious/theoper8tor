@@ -1,8 +1,12 @@
-{
-  "title": "index \u2014 image",
-  "visible": true,
-  "order": 1,
-  "image": { "src": "/images/76d5cfe4309f.png", "alt": "index \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/800b1d35-8f90-41e6-bfe1-bb7b3004e9b3.png?alt=media",
-}
+title: index — image
+visible: true
+order: 1
+image:
+  src: /images/76d5cfe4309f.png
+  alt: index — image
+categories:
+- Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/800b1d35-8f90-41e6-bfe1-bb7b3004e9b3.png?alt=media
+thumbnail:
+  src: /images/76d5cfe4309f-thumbnail-66798248916acc1f.png
+  alt: index — image
