@@ -46,6 +46,8 @@ Do not reuse a filename slug already present in another collection. Renaming a s
 
 ## Photos
 
+`content/.navigation.yml` connects the image picker to `07.photos` and the video picker to `09.videos` through `studio.libraries`. Keep this root configuration when reorganizing content; the media library folders alone do not configure the pickers.
+
 The library supports category and visibility filters, uploads to `public/images/`, editable alternative text and optional thumbnails. Images retain their natural proportions; library thumbnails use 4:3. Supported uploads are JPG, JPEG, PNG, WebP and GIF up to 10 MiB. The library uses editable JPEG/PNG images; original SVG artwork is archived under `docs/vector-originals/`.
 
 `visible` controls library metadata; pages display their selected image directly. To remove a photograph from a page, remove or replace the page's image. Updating a library item's source does not rewrite selected image paths in page sections: select the new image in each section that uses it.

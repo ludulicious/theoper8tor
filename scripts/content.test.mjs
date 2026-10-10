@@ -280,3 +280,30 @@ test("six main pages share Pages with simple Details and plain Markdown stories"
     }
   }
 });
+
+test("Studio media pickers have configured image and video libraries", () => {
+  const navigation = parse(
+    readFileSync(`${root}/content/.navigation.yml`, "utf8"),
+  );
+  for (const [kind, collection] of [
+    ["images", "photos"],
+    ["videos", "videos"],
+  ]) {
+    const directory = navigation.studio?.libraries?.[kind];
+    assert.equal(typeof directory, "string", `${kind}: library configuration`);
+    assert.ok(
+      existsSync(`${root}/content/${directory}/.navigation.yml`),
+      `${kind}: library folder`,
+    );
+    const settings = parse(
+      readFileSync(`${root}/content/${directory}/.navigation.yml`, "utf8"),
+    );
+    assert.equal(settings.studio.view, "media", `${kind}: media view`);
+    assert.ok(
+      readdirSync(`${root}/content/${directory}`).some(
+        (file) => file.endsWith(".yml") && !file.startsWith("."),
+      ),
+      `${collection}: library items`,
+    );
+  }
+});
