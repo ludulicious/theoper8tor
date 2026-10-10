@@ -44,7 +44,7 @@ provide(
 );
 const canonical = computed(
   () =>
-    `${settings.value?.site?.url || "https://theoper8tor.com"}${encodeURI(path.value)}`,
+    `${settings.value?.site?.url || "https://theoper8tor.marpos.nl"}${encodeURI(path.value)}`,
 );
 const { data: sharingMedia } = await useAsyncData("sharing-media", async () => {
   const [photos, videos] = await Promise.all([

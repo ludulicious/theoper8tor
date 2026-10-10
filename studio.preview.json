@@ -34,6 +34,7 @@
   "content/06.blog/04.5-myths-about-networking.md": "/blog/5-myths-about-networking",
   "content/07.photos/03029f70b1db.yml": "/",
   "content/07.photos/0384c30f013d.yml": [
+    "/",
     "/book-a-session/virtual-coffee",
     "/book-a-session/intentional-coffee"
   ],
@@ -100,7 +101,7 @@
     "/book-a-session/ready-to-scale/visible"
   ],
   "content/07.photos/9c2d4e9ea8d5.yml": [
-    "/"
+    "/how-can-help"
   ],
   "content/07.photos/9d53416e6788.yml": "/",
   "content/07.photos/9f196af9ff11.yml": "/",
@@ -149,9 +150,7 @@
   "content/07.photos/e727237a175d.yml": [
     "/resources/passion-to-profit-planner"
   ],
-  "content/07.photos/eac6725b744f.yml": [
-    "/how-can-help"
-  ],
+  "content/07.photos/eac6725b744f.yml": "/",
   "content/07.photos/ef3f1cc464cd.yml": "/",
   "content/07.photos/f2d8939b0807.yml": "/",
   "content/07.photos/f5a604bee4a6.yml": "/",

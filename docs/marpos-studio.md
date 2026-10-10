@@ -129,3 +129,5 @@ Resources uses `app/pages/resources/index.vue` for its overview and `app/pages/r
 Every page supplies an absolute image URL for Open Graph and Twitter/X previews. An optional **Thumbnail** in Details overrides the preview without changing the photograph displayed on the page. Otherwise the site uses the page’s main image (or the first image in its Markdown story), preferring the matching Photos library thumbnail when one exists. A programme with a video can use that video’s library image. Pages without their own image use **Site → Sharing Image**, with the site logo as a final fallback. The default is the existing landscape brand artwork.
 
 Social platforms cache link previews; an already-shared URL may need refreshing through that platform before a changed image appears.
+
+**Site → URL** must match the public deployment domain (currently `https://theoper8tor.marpos.nl`). Sharing images, canonical links and the sitemap use this address. Update it when moving to the final domain; that domain must serve the same image files publicly.

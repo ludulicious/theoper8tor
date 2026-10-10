@@ -21,7 +21,7 @@ function storyImage(body) {
 }
 
 export function sharingImage(page, site, photos = [], videos = []) {
-  const origin = site?.url || "https://theoper8tor.com";
+  const origin = site?.url || "https://theoper8tor.marpos.nl";
   const pageImage = page?.image || storyImage(page?.body);
   const photo = photos.find((item) => item.image?.src === pageImage?.src);
   const video = videos.find((item) => item.youtubeId === page?.youtubeId);
