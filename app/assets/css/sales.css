@@ -45,7 +45,7 @@
 .offer-page .action-link {
   font-size: 1.1rem;
   white-space: nowrap;
-  border-radius: 2px;
+  border-radius: var(--radius-soft);
   padding: 14px 24px;
 }
 .sales-page .content-grid {
