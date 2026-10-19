@@ -2,3 +2,8 @@ studio:
   libraries:
     images: 07.photos
     videos: 09.videos
+  linkFields:
+    - cta.to
+    - secondaryCta.to
+    - sessions.cta.to
+    - breadcrumbs.*.to
