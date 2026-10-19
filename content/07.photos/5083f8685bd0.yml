@@ -1,9 +1,9 @@
-{
-  "title": "services \u2014 image",
-  "visible": true,
-  "order": 4,
-  "image":
-    { "src": "/images/5083f8685bd0.jpg", "alt": "services \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/b3e4275f-2deb-46f4-a737-a3c54870dced.png?alt=media",
-}
+title: Team brainstorming at a glass board
+visible: true
+order: 4
+image:
+  src: /images/5083f8685bd0.jpg
+  alt: Colleagues discussing ideas and writing on a transparent glass board.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/b3e4275f-2deb-46f4-a737-a3c54870dced.png?alt=media

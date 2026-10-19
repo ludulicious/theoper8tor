@@ -1,8 +1,9 @@
-{
-  "title": "Image",
-  "visible": true,
-  "order": 52,
-  "image": { "src": "/images/61b9a746dc90.png", "alt": "Image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64bf69b41176ac461f0fbd75.png",
-}
+title: Gold money bag icon
+visible: true
+order: 52
+image:
+  src: /images/61b9a746dc90.png
+  alt: Shiny gold drawstring money bag on a white background.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64bf69b41176ac461f0fbd75.png

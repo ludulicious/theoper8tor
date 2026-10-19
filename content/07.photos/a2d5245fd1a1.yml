@@ -1,9 +1,9 @@
-{
-  "title": "newsletter \u2014 image",
-  "visible": true,
-  "order": 36,
-  "image":
-    { "src": "/images/a2d5245fd1a1.png", "alt": "newsletter \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6439f542184ac80fdc07cf34.png",
-}
+title: Clubhouse Masterclass outdoor billboard
+visible: true
+order: 36
+image:
+  src: /images/a2d5245fd1a1.png
+  alt: Clubhouse Masterclass advertisement featuring a woman on a large outdoor screen between city buildings.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6439f542184ac80fdc07cf34.png

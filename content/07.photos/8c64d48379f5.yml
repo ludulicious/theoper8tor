@@ -1,9 +1,9 @@
-{
-  "title": "services \u2014 image",
-  "visible": true,
-  "order": 6,
-  "image":
-    { "src": "/images/8c64d48379f5.png", "alt": "services \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/216162c0-8134-4876-a291-c7d3807bed28.png?alt=media",
-}
+title: Online group meeting on a laptop
+visible: true
+order: 6
+image:
+  src: /images/8c64d48379f5.png
+  alt: Person using a laptop for a video meeting with several participants, shown in a circular crop.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/216162c0-8134-4876-a291-c7d3807bed28.png?alt=media

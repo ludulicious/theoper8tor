@@ -1,8 +1,9 @@
-{
-  "title": "Image",
-  "visible": true,
-  "order": 53,
-  "image": { "src": "/images/d2e311a43407.png", "alt": "Image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/1e5c3ed7-a680-4204-9db6-ea01b28ba0cb.png",
-}
+title: Gold checkmark icon
+visible: true
+order: 53
+image:
+  src: /images/d2e311a43407.png
+  alt: Gold checkmark inside a circular gold outline on a transparent background.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/1e5c3ed7-a680-4204-9db6-ea01b28ba0cb.png

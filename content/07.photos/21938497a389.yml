@@ -1,12 +1,9 @@
-{
-  "title": "Is Entrepreneurship the Path for You?",
-  "visible": true,
-  "order": 67,
-  "image":
-    {
-      "src": "/images/21938497a389.jpeg",
-      "alt": "Is Entrepreneurship the Path for You?",
-    },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/64b24c72fc60ad78e453a6ff.jpeg",
-}
+title: Is entrepreneurship the path for you? — article banner
+visible: true
+order: 67
+image:
+  src: /images/21938497a389.jpeg
+  alt: Article banner with a seated woman and the question Is Entrepreneurship the Path for You?, credited to Staci Moore.
+categories:
+  - Original website
+credit: The Oper8tor — https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/64b24c72fc60ad78e453a6ff.jpeg

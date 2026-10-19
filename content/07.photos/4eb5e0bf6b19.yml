@@ -1,8 +1,9 @@
-{
-  "title": "FAQ image",
-  "visible": true,
-  "order": 51,
-  "image": { "src": "/images/4eb5e0bf6b19.png", "alt": "FAQ image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/686215deb04c6216a06df6fc.png",
-}
+title: Limitless TV logo
+visible: true
+order: 51
+image:
+  src: /images/4eb5e0bf6b19.png
+  alt: Colourful glowing infinity symbol above the words Limitless TV.
+categories:
+  - Original website
+credit: The Oper8tor — https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/686215deb04c6216a06df6fc.png

@@ -1,9 +1,9 @@
-{
-  "title": "p2pplanner \u2014 image",
-  "visible": true,
-  "order": 61,
-  "image":
-    { "src": "/images/a03ff202ecbe.png", "alt": "p2pplanner \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/bd907472-59fc-4fac-84a6-a42798d56823.png",
-}
+title: Secure checkout and encryption badge
+visible: true
+order: 61
+image:
+  src: /images/a03ff202ecbe.png
+  alt: Lock icons with Secure Checkout and 256-bit Encrypted lettering.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/bd907472-59fc-4fac-84a6-a42798d56823.png

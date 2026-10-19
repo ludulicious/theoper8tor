@@ -1,8 +1,9 @@
-{
-  "title": "Image",
-  "visible": true,
-  "order": 45,
-  "image": { "src": "/images/8f2a4e8ade5c.jpg", "alt": "Image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6abeec0c3df2ee8bbe3d6799.png",
-}
+title: The Caregiver's Collection banner
+visible: true
+order: 45
+image:
+  src: /images/8f2a4e8ade5c.jpg
+  alt: The Caregiver's Collection title on a flowing gold background.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6abeec0c3df2ee8bbe3d6799.png

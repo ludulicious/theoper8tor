@@ -1,12 +1,9 @@
-{
-  "title": "Thoughts from TheOper8tor - BLOG",
-  "visible": true,
-  "order": 64,
-  "image":
-    {
-      "src": "/images/a68c0754e642.jpeg",
-      "alt": "Thoughts from TheOper8tor - BLOG",
-    },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6486452591e5a30c6aa949fb.jpeg",
-}
+title: Thoughts from The Oper8tor — blog banner
+visible: true
+order: 64
+image:
+  src: /images/a68c0754e642.jpeg
+  alt: Black and gold Thoughts from The Oper8tor banner with a portrait and the phrases Straight No Chaser and Where I can give my 2 cents worth.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6486452591e5a30c6aa949fb.jpeg

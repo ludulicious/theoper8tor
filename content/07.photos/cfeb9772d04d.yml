@@ -1,8 +1,9 @@
-{
-  "title": "TheOper8tor",
-  "visible": true,
-  "order": 25,
-  "image": { "src": "/images/cfeb9772d04d.jpeg", "alt": "TheOper8tor" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6337f8fc6dd32a3ec5682cdf.jpeg",
-}
+title: Welcome to The Oper8tor — introduction card
+visible: true
+order: 25
+image:
+  src: /images/cfeb9772d04d.jpeg
+  alt: Black and gold welcome card with Staci Moore's portrait and an introduction to her work connecting people with resources and relationships.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6337f8fc6dd32a3ec5682cdf.jpeg

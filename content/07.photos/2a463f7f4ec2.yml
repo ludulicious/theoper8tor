@@ -1,9 +1,9 @@
-{
-  "title": "readytoscale \u2014 image",
-  "visible": true,
-  "order": 28,
-  "image":
-    { "src": "/images/2a463f7f4ec2.png", "alt": "readytoscale \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64ed7e8595d08fff1a690888.png",
-}
+title: Ready to Scale — Vocal package overview, alternate
+visible: true
+order: 28
+image:
+  src: /images/2a463f7f4ec2.png
+  alt: Alternate Vocal package graphic marked Our Most Popular, with two hours of support, deliverables and a $1,500 price.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64ed7e8595d08fff1a690888.png

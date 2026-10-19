@@ -1,8 +1,9 @@
-{
-  "title": "bbb \u2014 image",
-  "visible": true,
-  "order": 13,
-  "image": { "src": "/images/fa19c68f646a.jpg", "alt": "bbb \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/dfbc1b99-861a-4628-b360-c1a2f6d0e470.png?alt=media",
-}
+title: Savings jar with dollar notes
+visible: true
+order: 13
+image:
+  src: /images/fa19c68f646a.jpg
+  alt: Glass jar holding US dollar notes on a wooden surface.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/dfbc1b99-861a-4628-b360-c1a2f6d0e470.png?alt=media

@@ -1,9 +1,9 @@
-{
-  "title": "readytoscale \u2014 image",
-  "visible": true,
-  "order": 31,
-  "image":
-    { "src": "/images/07a535e0eb94.png", "alt": "readytoscale \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/eb6e3299-88fd-4a03-9a28-6e0618d38cf2.svg?alt=media",
-}
+title: LinkedIn icon — flat
+visible: true
+order: 31
+image:
+  src: /images/07a535e0eb94.png
+  alt: White LinkedIn logo on a black rounded square.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/eb6e3299-88fd-4a03-9a28-6e0618d38cf2.svg?alt=media

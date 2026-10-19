@@ -1,9 +1,9 @@
-{
-  "title": "newsletter \u2014 image",
-  "visible": true,
-  "order": 35,
-  "image":
-    { "src": "/images/1e368ab08ae4.png", "alt": "newsletter \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64a74850d8e4b87ea4172fb1.png",
-}
+title: Oper8te 911 | 411 | 311 newsletter logo
+visible: true
+order: 35
+image:
+  src: /images/1e368ab08ae4.png
+  alt: Gold Oper8te 911 | 411 | 311 lettering with the tagline Connecting you with the information you need most.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64a74850d8e4b87ea4172fb1.png

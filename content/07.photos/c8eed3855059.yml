@@ -1,8 +1,9 @@
-{
-  "title": "about \u2014 image",
-  "visible": true,
-  "order": 55,
-  "image": { "src": "/images/c8eed3855059.png", "alt": "about \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/c6535be2-2ff3-4484-9576-a31315bdee1e.png?alt=media",
-}
+title: The New You Times wordmark
+visible: true
+order: 55
+image:
+  src: /images/c8eed3855059.png
+  alt: White The New You Times lettering on a transparent background.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/c6535be2-2ff3-4484-9576-a31315bdee1e.png?alt=media

@@ -1,9 +1,9 @@
-{
-  "title": "readytoscale \u2014 image",
-  "visible": true,
-  "order": 22,
-  "image":
-    { "src": "/images/47d1abd378d5.jpeg", "alt": "readytoscale \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6337f8fc6dd32ab17a682cdc.jpeg",
-}
+title: Ready to Scale — Vision package overview
+visible: true
+order: 22
+image:
+  src: /images/47d1abd378d5.jpeg
+  alt: Black and gold Vision package graphic marked Just a Glimpse, listing one hour of support and a $750 price.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/6337f8fc6dd32ab17a682cdc.jpeg

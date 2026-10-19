@@ -1,9 +1,9 @@
-{
-  "title": "services \u2014 image",
-  "visible": true,
-  "order": 7,
-  "image":
-    { "src": "/images/f5a604bee4a6.png", "alt": "services \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/ad05384b-a001-4fd7-aab9-07f59ccd8ebb.png?alt=media",
-}
+title: Remote consultation on a desktop computer
+visible: true
+order: 7
+image:
+  src: /images/f5a604bee4a6.png
+  alt: Woman at a desk taking part in a video meeting on a desktop computer, shown in a circular crop.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/ad05384b-a001-4fd7-aab9-07f59ccd8ebb.png?alt=media

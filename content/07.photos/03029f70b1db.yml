@@ -1,9 +1,9 @@
-{
-  "title": "connect \u2014 image",
-  "visible": true,
-  "order": 44,
-  "image":
-    { "src": "/images/03029f70b1db.jpeg", "alt": "connect \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/66355e76a98f28299f7b439c.jpeg",
-}
+title: Email contact icon
+visible: true
+order: 44
+image:
+  src: /images/03029f70b1db.jpeg
+  alt: White envelope and @ symbol on a dark square background.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/66355e76a98f28299f7b439c.jpeg

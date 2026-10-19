@@ -1,12 +1,9 @@
-{
-  "title": "client-relations-retention \u2014 image",
-  "visible": true,
-  "order": 12,
-  "image":
-    {
-      "src": "/images/d70142f31e8b.jpg",
-      "alt": "client-relations-retention \u2014 image",
-    },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/4ebe174c-e278-4419-bd7f-dbd40f5b8bec.png?alt=media",
-}
+title: Do the work — notebook and coffee
+visible: true
+order: 12
+image:
+  src: /images/d70142f31e8b.jpg
+  alt: Notebook with the words Do the Work beside a mug and stacked books on a wooden desk.
+categories:
+  - Original website
+credit: The Oper8tor — https://cdn.filesafe.space/location/S2t36O2OK8N6TuBspvx1/images/4ebe174c-e278-4419-bd7f-dbd40f5b8bec.png?alt=media

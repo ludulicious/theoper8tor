@@ -1,9 +1,9 @@
-{
-  "title": "readytoscale \u2014 image",
-  "visible": true,
-  "order": 16,
-  "image":
-    { "src": "/images/954638e386c3.png", "alt": "readytoscale \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/617f8ee1862bda50e439fad8.png",
-}
+title: The Oper8tor logo — transparent background
+visible: true
+order: 16
+image:
+  src: /images/954638e386c3.png
+  alt: Gold and black The Oper8tor wordmark with Powered by Staci Moore beneath it, on a transparent background.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/617f8ee1862bda50e439fad8.png

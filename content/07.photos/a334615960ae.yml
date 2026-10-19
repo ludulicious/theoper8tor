@@ -1,8 +1,9 @@
-{
-  "title": "FAQ image",
-  "visible": true,
-  "order": 50,
-  "image": { "src": "/images/a334615960ae.png", "alt": "FAQ image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/6921d154a6ad08e7dfdf3125.png",
-}
+title: Senior Care Planner — cover and worksheets
+visible: true
+order: 50
+image:
+  src: /images/a334615960ae.png
+  alt: Senior Care Planner book cover featuring an older couple, surrounded by planning worksheets.
+categories:
+  - Original website
+credit: The Oper8tor — https://storage.googleapis.com/msgsndr/S2t36O2OK8N6TuBspvx1/media/6921d154a6ad08e7dfdf3125.png

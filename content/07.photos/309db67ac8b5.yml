@@ -1,9 +1,9 @@
-{
-  "title": "connect \u2014 image",
-  "visible": true,
-  "order": 41,
-  "image":
-    { "src": "/images/309db67ac8b5.jpeg", "alt": "connect \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/66355e76a98f283af87b439d.jpeg",
-}
+title: Twitter icon — circular
+visible: true
+order: 41
+image:
+  src: /images/309db67ac8b5.jpeg
+  alt: Black Twitter bird inside a white circle on a dark square button.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/66355e76a98f283af87b439d.jpeg

@@ -1,9 +1,9 @@
-{
-  "title": "aicompanion \u2014 image",
-  "visible": true,
-  "order": 63,
-  "image":
-    { "src": "/images/706eccddfbd4.jpg", "alt": "aicompanion \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/65ca59a345d428388d106548.png",
-}
+title: AI Companion — business strategy banner
+visible: true
+order: 63
+image:
+  src: /images/706eccddfbd4.jpg
+  alt: AI Companion promotional banner with a futuristic armoured figure, business symbols and the message Revolutionize Your Revenue.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/65ca59a345d428388d106548.png

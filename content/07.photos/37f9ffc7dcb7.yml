@@ -1,9 +1,9 @@
-{
-  "title": "readytoscale \u2014 image",
-  "visible": true,
-  "order": 27,
-  "image":
-    { "src": "/images/37f9ffc7dcb7.png", "alt": "readytoscale \u2014 image" },
-  "categories": ["Original website"],
-  "credit": "The Oper8tor \u2014 https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64ed7e8595d08f3e93690887.png",
-}
+title: Ready to Scale — three ways to get started
+visible: true
+order: 27
+image:
+  src: /images/37f9ffc7dcb7.png
+  alt: Black and gold Ready to Scale introduction describing three ways to get started and inviting visitors to strategize.
+categories:
+  - Original website
+credit: The Oper8tor — https://assets.cdn.filesafe.space/S2t36O2OK8N6TuBspvx1/media/64ed7e8595d08f3e93690887.png
