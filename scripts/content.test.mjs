@@ -66,7 +66,16 @@ test("navigation, redirect destinations and Studio page previews are valid", () 
   const preview = JSON.parse(
     readFileSync(`${root}/studio.preview.json`, "utf8"),
   );
-  for (const page of pages) assert.equal(preview[page.file], page.path);
+  for (const page of pages) {
+    if (page.path === "/" || page.collection === "blogIndex")
+      assert.equal(preview[page.file], page.path);
+    else
+      assert.equal(
+        preview[page.file],
+        undefined,
+        `${page.file}: allow slug changes`,
+      );
+  }
 });
 
 test("video library references, thumbnails and Studio previews resolve", () => {
@@ -358,4 +367,24 @@ test("sharing previews prefer thumbnails, keep page images and always have a def
         `${page.file}: ${url.pathname}`,
       );
   }
+});
+
+test("new and renamed Pages use filename routes while deliberate index pages stay fixed", () => {
+  for (const file of ["pages/06.new-page.md", "pages/06.renamed-page.md"])
+    assert.equal(
+      pagePath(file, pageSources.content),
+      `/${file.includes("renamed") ? "renamed-page" : "new-page"}`,
+    );
+  assert.equal(pagePath("pages/00.index.md", pageSources.content), "/");
+  assert.equal(pageSources.blogIndex.include, "06.blog/00.index.md");
+  assert.ok(existsSync(`${root}/app/pages/index.vue`));
+  assert.ok(existsSync(`${root}/app/pages/blog/index.vue`));
+  for (const page of pages.filter(
+    (page) => page.path !== "/" && page.collection !== "blogIndex",
+  ))
+    assert.ok(
+      !existsSync(`${root}/app/pages${page.path}.vue`) &&
+        !existsSync(`${root}/app/pages${page.path}/index.vue`),
+      `${page.path}: no fixed route should shadow content slugs`,
+    );
 });

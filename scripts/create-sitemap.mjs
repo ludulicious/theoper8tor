@@ -31,7 +31,11 @@ const preview = {
   "content/08.settings/site.yml": "/",
   "content/08.settings/menu.yml": "/",
 };
-for (const page of pages) preview[page.file] = page.path;
+// Ordinary page routes follow their content filenames. Pin only deliberate fixed pages.
+for (const page of pages) {
+  if (page.path === "/" || page.collection === "blogIndex")
+    preview[page.file] = page.path;
+}
 for (const file of readdirSync(`${root}/content/07.photos`).filter(
   (file) => file.endsWith(".yml") && !file.startsWith("."),
 )) {
